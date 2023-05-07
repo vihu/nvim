@@ -1,7 +1,7 @@
 return {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
-    enabled = true,
+    enabled = false,
     config = function()
         require("gruvbox").setup({
             undercurl = false,
@@ -26,7 +26,7 @@ return {
             dim_inactive = true,
             transparent_mode = true,
         })
-        vim.o.background = "light"
+        vim.o.background = "dark"
         vim.cmd([[colorscheme gruvbox]])
     end,
 }

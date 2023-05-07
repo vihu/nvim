@@ -8,45 +8,42 @@
 
 Output of `:Lazy show`
 
-```
-  Total: 57 plugins
+```bash
+  Total: 56 plugins
 
-  Loaded (33)
-    ● LspUI.nvim 0.6ms  VeryLazy
-    ● LuaSnip 3.03ms  start
-    ● barbar.nvim 2.32ms  start
-    ● cmp-nvim-lsp 0.11ms   nvim-lspconfig
-    ● diffview.nvim 1.45ms  VeryLazy
-    ● fidget.nvim 0.34ms  start
-    ● gitsigns.nvim 0.57ms  start
-    ● gruvbox.nvim 1.96ms  start
-    ● hop.nvim 0.43ms  start
-    ● indent-blankline.nvim 0.71ms  start
-    ● lazy.nvim 2.53ms   init.lua
-    ● lualine-lsp-progress 0.06ms   lualine.nvim
-    ● lualine.nvim 3.98ms  start
-    ● mason-lspconfig.nvim 0.08ms   mason.nvim
-    ● mason-tool-installer.nvim 0.5ms   mason.nvim
-    ● mason.nvim 4.95ms  start
-    ● mini.comment 0.16ms  start
-    ● mini.pairs 0.6ms  start
-    ● mini.surround 0.4ms  start
-    ● neo-tree.nvim 10.99ms   <leader>e
-    ● neoscroll.nvim 0.27ms  start
-    ● nui.nvim 0.28ms   neo-tree.nvim
-    ● null-ls.nvim 1.1ms  start
-    ● nvim-colorizer.lua 0.74ms  VeryLazy
-    ● nvim-lspconfig 1.21ms   mason.nvim
-    ● nvim-treesitter 14.55ms  start
-    ● nvim-ts-context-commentstring 0.23ms  VeryLazy
-    ● nvim-web-devicons 0.1ms   barbar.nvim
-    ● nvim-window-picker 0.21ms  start
-    ● plenary.nvim 0.06ms  start
-    ● quickfix-reflector.vim 0.16ms  VeryLazy
-    ● toggleterm.nvim 2.15ms  VeryLazy
-    ● vim-tmux-navigator 0.13ms  start
+  Loaded (30)
+    ● LspUI.nvim 2.04ms  VeryLazy
+    ● LuaSnip 3.89ms  start
+    ● barbar.nvim 2.33ms  start
+    ● cmp-nvim-lsp 0.1ms   nvim-lspconfig
+    ● diffview.nvim 1.99ms  VeryLazy
+    ● gitsigns.nvim 1.22ms  start
+    ● hop.nvim 0.33ms  start
+    ● indent-blankline.nvim 0.3ms  start
+    ● kanagawa.nvim 1.36ms  start
+    ● lazy.nvim 2.54ms   init.lua
+    ● lualine-lsp-progress 0.07ms   lualine.nvim
+    ● lualine.nvim 2.6ms  start
+    ● mason-lspconfig.nvim 0.05ms   mason.nvim
+    ● mason-tool-installer.nvim 0.42ms   mason.nvim
+    ● mason.nvim 6.15ms  start
+    ● mini.comment 0.22ms  start
+    ● mini.pairs 0.48ms  start
+    ● mini.surround 0.26ms  start
+    ● neoscroll.nvim 0.29ms  start
+    ● null-ls.nvim 0.45ms  start
+    ● nvim-colorizer.lua 0.96ms  VeryLazy
+    ● nvim-lspconfig 2.72ms   mason.nvim
+    ● nvim-treesitter 8.3ms  start
+    ● nvim-ts-context-commentstring 0.25ms  VeryLazy
+    ● nvim-web-devicons 0.11ms   lualine.nvim
+    ● nvim-window-picker 0.24ms  start
+    ● plenary.nvim 0.07ms  start
+    ● quickfix-reflector.vim 0.17ms  VeryLazy
+    ● toggleterm.nvim 1.01ms  VeryLazy
+    ● vim-tmux-navigator 0.15ms  start
 
-  Not Loaded (20)
+  Not Loaded (22)
     ○ cmp-buffer   nvim-cmp
     ○ cmp-nvim-lsp-signature-help   nvim-cmp
     ○ cmp-nvim-lua   nvim-cmp
@@ -59,6 +56,8 @@ Output of `:Lazy show`
     ○ lspkind.nvim   nvim-cmp
     ○ markdown-preview.nvim   markdown
     ○ mini.trailspace   <leader>tw
+    ○ neo-tree.nvim   <leader>e
+    ○ nui.nvim   neo-tree.nvim
     ○ nvim-cmp  InsertEnter
     ○ nvim-dap   <leader>db <leader>dus
     ○ obsidian.nvim   <leader>sn <leader>nn
@@ -70,17 +69,13 @@ Output of `:Lazy show`
 
   Disabled (4)
     ○ catppuccin 
-    ○ kanagawa.nvim 
+    ○ gruvbox.nvim 
     ○ nightfox.nvim 
-    ○ solarized.nvim
+    ○ solarized.nvim 23, and they currently have 1.5 years of runway with m
 ```
 
 ## Screenshots
 
-- Gruvbox light
+![](assets/2023-05-07-14-24-06-image.png)
 
-![](assets/2023-05-05-10-19-30-image.png)
-
-- Gruvbox dark
-
-![](assets/2023-05-05-10-18-33-image.png)
+![](assets/2023-05-07-14-25-28-image.png)
