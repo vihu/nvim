@@ -2,7 +2,7 @@ return {
 	"williamboman/mason.nvim",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		"whoissethdaniel/mason-tool-installer.nvim",
 	},
 	config = function()
 		local status_ok, mason = pcall(require, "mason")
@@ -35,6 +35,7 @@ return {
 
 		mason_tool_installer.setup({
 			ensure_installed = {
+				"html-lsp",
 				"stylua",
 				"lua-language-server",
 				"shellcheck",

@@ -4,6 +4,9 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	keys = {
+		{ "gd", "<cmd>vim.lsp.buf.definition<CR>", desc = "peek definition" },
+		{ "<leader>ca", "<cmd>vim.lsp.buf.code_action()<CR>", desc = "code action" },
+		{ "K", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "hover doc" },
 		{ "gD", "<cmd>lua vim.lsp.buf.implementation()<CR>", desc = "implementation" },
 		{ "gK", "<cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "signature help" },
 		{ "1gD", "<cmd>lua vim.lsp.buf.type_definition()<CR>", desc = "type definition" },

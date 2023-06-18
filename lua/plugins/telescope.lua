@@ -9,8 +9,6 @@ return {
 		},
 	},
 	keys = {
-		-- Use ctrl-p for finding files
-		{ "<C-P>", "<cmd>lua require('telescope.builtin').find_files()<CR>", desc = "find files" },
 		-- Search with ,,
 		{ "<leader>,", "<cmd>lua require('telescope.builtin').live_grep()<CR>", desc = "search with ,," },
 		-- Grep for current string
@@ -68,5 +66,7 @@ return {
 		})
 		require("telescope").load_extension("fzf")
 		require("telescope").load_extension("zoxide")
+		-- Resume telescope window with ; in normal mode
+		vim.keymap.set("n", ";", ":Telescope resume<CR>", {})
 	end,
 }

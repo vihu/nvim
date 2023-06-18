@@ -34,8 +34,6 @@ Nmap("<M-j>", ":resize +2<CR>", OPTS)
 Nmap("n", "nzzzv", OPTS)
 Nmap("N", "Nzzzv", OPTS)
 Nmap("J", "mzJ`z", OPTS)
--- Copy till the end of line
-Nmap("Y", "yg_", OPTS)
 -- Insert current datetime
 Nmap("<F3>", "i<C-R>=strftime('%Y-%m-%d %a %I:%M %p')<CR><Esc>", OPTS)
 -- Get current full file path
@@ -47,10 +45,10 @@ Nmap("q", "<nop>", SOPTS)
 Nmap("qq", "q", SOPTS)
 -- Map Ctrl+l to clear highlights
 Nmap("<leader>l", ":noh<CR>", SOPTS)
--- -- Press enter in normal mode to insert a blank new line below
--- vim.keymap.set('n', '<CR>', '@="m`o<C-V><Esc>``"<CR>')
--- -- Press shift+enter in normal mode to insert a blank new line above
--- vim.keymap.set('n', '<S-CR>', '@="m`O<C-V><Esc>``"<CR>')
+-- Press enter to change in word
+Nmap("<CR>", "ciw", OPTS)
+-- Press shift+u for redo
+Nmap("U", "<C-r>", OPTS)
 
 ---------------------------------------------------------------------
 -- Visual mode mappings
@@ -58,3 +56,5 @@ Nmap("<leader>l", ":noh<CR>", SOPTS)
 -- Shift + J/K moves selected lines down/up in visual Mode
 Vmap("J", ":m '>+1<CR>gv=gv", OPTS)
 Vmap("K", ":m '<-2<CR>gv=gv", OPTS)
+-- Prevent cursor from jumping back
+Vmap("y", "ygv<esc>", OPTS)

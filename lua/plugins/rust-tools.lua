@@ -60,13 +60,13 @@ return {
 					},
 				},
 			},
-            dap = {
-                adapter = {
-                    type = "executable",
-                    command = "lldb-vscode",
-                    name = "rt_lldb"
-                }
-            }
+			dap = {
+				adapter = {
+					type = "executable",
+					command = "lldb-vscode",
+					name = "rt_lldb",
+				},
+			},
 		})
 	end,
 }

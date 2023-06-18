@@ -45,7 +45,7 @@ opt.hlsearch = true
 -- Search incrementally
 opt.incsearch = true
 -- Make nvim load faster
-opt.lazyredraw = true
+opt.lazyredraw = false
 -- Fix regex matching
 opt.magic = true
 -- Show matching bracket briefly
@@ -107,24 +107,24 @@ api.nvim_command("au BufRead,BufNewFile *.py set textwidth=79")
 
 -- Hide quickfix buffer after selecting an entry and pressing Enter key
 api.nvim_create_autocmd("FileType", {
-    pattern = "qf",
-    command = "nnoremap <buffer> <CR> <CR>:cclose<CR>",
+	pattern = "qf",
+	command = "nnoremap <buffer> <CR> <CR>:cclose<CR>",
 })
 
 -- Highlight yanked text for 200ms using the "Visual" highlight group
 api.nvim_create_augroup("highlight_yank", {})
 api.nvim_create_autocmd("TextYankPost", {
-    pattern = "*",
-    group = "highlight_yank",
-    command = "silent! lua vim.highlight.on_yank({higroup='Visual', timeout=200})",
+	pattern = "*",
+	group = "highlight_yank",
+	command = "silent! lua vim.highlight.on_yank({higroup='Visual', timeout=200})",
 })
 
 -- Global diagnostic config
 vim.diagnostic.config({
-    virtual_text = false,
+	virtual_text = false,
 })
 
-vim.g.python3_host_prog = vim.fn.expand("$HOME/.pyenv/versions/pynvim/bin/python")
+vim.g.python3_host_prog = vim.fn.expand("$HOME/.config/pynvim/.venv/bin/python")
 vim.g.node_host_prog = vim.fn.expand("$HOME/.npm-global/bin/neovim-node-host")
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
