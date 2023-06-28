@@ -45,8 +45,6 @@ Nmap("q", "<nop>", SOPTS)
 Nmap("qq", "q", SOPTS)
 -- Map Ctrl+l to clear highlights
 Nmap("<leader>l", ":noh<CR>", SOPTS)
--- Press enter to change in word
-Nmap("<CR>", "ciw", OPTS)
 -- Press shift+u for redo
 Nmap("U", "<C-r>", OPTS)
 

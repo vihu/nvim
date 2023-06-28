@@ -1,7 +1,7 @@
 return {
 	"rebelot/kanagawa.nvim",
 	priority = 1000,
-	enabled = true,
+	enabled = false,
 	config = function()
 		require("kanagawa").setup({
 			undercurl = true,

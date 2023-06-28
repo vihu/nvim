@@ -6,8 +6,6 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		-- Neovim lsp completion
 		"hrsh7th/cmp-nvim-lua",
-		-- Emphasize current parameter
-		"hrsh7th/cmp-nvim-lsp-signature-help",
 		-- CMP Snippet completion
 		"saadparwaiz1/cmp_luasnip",
 		-- Snipper collection
@@ -63,6 +61,8 @@ return {
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
+					elseif require("copilot.suggestion").is_visible() then
+						require("copilot.suggestion").accept()
 					elseif luasnip.expand_or_jumpable() then
 						luasnip.expand_or_jump()
 					elseif has_words_before() then
@@ -92,12 +92,10 @@ return {
 			-- Installed sources
 			sources = {
 				{ name = "nvim_lsp", group_index = 2 },
-				{ name = "copilot", group_index = 2 },
 				{ name = "luasnip", group_index = 2 },
 				{ name = "rg", group_index = 2 },
 				{ name = "buffer", group_index = 2 },
 				{ name = "path", group_index = 2 },
-				{ name = "nvim_lsp_signature_help", group_index = 2 },
 				{ name = "nvim_lua", group_index = 2 },
 				{ name = "crates", group_index = 2 },
 			},
@@ -105,7 +103,6 @@ return {
 				format = lspkind.cmp_format({
 					mode = "symbol",
 					max_width = "50",
-					symbol_map = { Copilot = "" },
 				}),
 			},
 		})

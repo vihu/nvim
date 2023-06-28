@@ -10,13 +10,16 @@ return {
 				theme = "neovim",
 				transparent = true,
 			},
-			highlights = function(colors)
+			highlights = function(colors, darken, _, _)
 				return {
-					NormalNC = { fg = colors.comment, bg = colors.bg_alt },
+					NormalNC = { fg = colors.fg, bg = darken(colors.bg, 10) },
+					LineNr = { bg = nil },
+					SignColumn = { bg = nil },
 				}
 			end,
 		})
 
+		vim.o.background = "dark"
 		vim.cmd("colorscheme solarized")
 	end,
 }
