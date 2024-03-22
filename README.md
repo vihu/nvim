@@ -3,47 +3,51 @@
 Output of `:Lazy show`:
 
 ```
-  Total: 38 plugins
+  Total: 42 plugins
 
-  Loaded (37)
-    ● barbar.nvim 2.08ms  start
-    ● catppuccin 1.27ms  start
+  Loaded (40)
+    ● barbar.nvim 1.73ms  start
+    ● catppuccin 1.44ms  start
     ● cmp-nvim-lsp 0.02ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
-    ● cmp-path 0.43ms  nvim-cmp
-    ● cmp_luasnip 1.41ms  nvim-cmp
-    ● conform.nvim 0.33ms  start
-    ● fidget.nvim 6.63ms  nvim-lspconfig
-    ● friendly-snippets 8.81ms  LuaSnip
-    ● gitsigns.nvim 0.53ms  barbar.nvim
-    ● lazy.nvim 1.97ms  init.lua
-    ● lsp-inlayhints.nvim 0.27ms  nvim-lspconfig
-    ● LuaSnip 9.32ms  nvim-cmp
-    ● mason-lspconfig.nvim 0.06ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 0.68ms  nvim-lspconfig
-    ● mason.nvim 0.07ms  nvim-lspconfig
-    ● mini.nvim 0.98ms  start
-    ● neodev.nvim 0.34ms  nvim-lspconfig
-    ● noice.nvim 1.07ms  VeryLazy
+    ● cmp-path 0.37ms  nvim-cmp
+    ● cmp_luasnip 1.37ms  nvim-cmp
+    ● conform.nvim 0.25ms  start
+    ● copilot-cmp 0.51ms  nvim-cmp
+    ● fidget.nvim 7.04ms  nvim-lspconfig
+    ● friendly-snippets 7.93ms  LuaSnip
+    ● gitsigns.nvim 0.76ms  barbar.nvim
+    ● lazy.nvim 2.34ms  init.lua
+    ● lsp-inlayhints.nvim 0.26ms  nvim-lspconfig
+    ● lspkind.nvim 0.05ms  nvim-cmp
+    ● LuaSnip 8.39ms  nvim-cmp
+    ● mason-lspconfig.nvim 0.08ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 0.76ms  nvim-lspconfig
+    ● mason.nvim 0.09ms  nvim-lspconfig
+    ● mini.nvim 1.68ms  start
+    ● neodev.nvim 0.37ms  nvim-lspconfig
+    ● noice.nvim 0.9ms 󰢱 telescope._extensions.noice  telescope.nvim
     ● nui.nvim 0.19ms  noice.nvim
-    ● nvim-cmp 11.78ms  InsertEnter
-    ● nvim-colorizer.lua 1.18ms  VeryLazy
-    ● nvim-lspconfig 10.24ms  start
-    ● nvim-notify 0.17ms  noice.nvim
-    ● nvim-tree.lua 4.35ms 󰢱 nvim-tree.api  fidget.nvim
-    ● nvim-treesitter 2.37ms  start
-    ● nvim-web-devicons 0.15ms  nvim-tree.lua
-    ● obsidian.nvim 1.9ms  markdown
+    ● nvim-cmp 11.46ms 󰢱 cmp  obsidian.nvim
+    ● nvim-colorizer.lua 1.28ms  VeryLazy
+    ● nvim-lspconfig 10.68ms  start
+    ● nvim-notify 0.2ms  noice.nvim
+    ● nvim-tree.lua 4.65ms 󰢱 nvim-tree.api  fidget.nvim
+    ● nvim-treesitter 2.5ms  start
+    ● nvim-web-devicons 0.14ms  nvim-tree.lua
+    ● obsidian.nvim 14.29ms  markdown
+    ● oil.nvim 1.78ms  start
     ● peek.nvim 0.54ms  VeryLazy
-    ● plenary.nvim 0.22ms  telescope.nvim
-    ● telescope-fzf-native.nvim 0.22ms  telescope.nvim
-    ● telescope-ui-select.nvim 0.15ms  telescope.nvim
-    ● telescope.nvim 5.83ms  VimEnter
-    ● todo-comments.nvim 0.55ms  VimEnter
+    ● plenary.nvim 0.18ms  obsidian.nvim
+    ● telescope-fzf-native.nvim 0.19ms  telescope.nvim
+    ● telescope-ui-select.nvim 0.18ms  telescope.nvim
+    ● telescope.nvim 6.76ms  VimEnter
+    ● todo-comments.nvim 0.57ms  VimEnter
     ● vim-just 0.03ms  BufReadPre
-    ● vim-sleuth 0.3ms  start
-    ● vim-tmux-navigator 0.14ms  start
-    ● which-key.nvim 4.03ms  VimEnter
+    ● vim-sleuth 0.26ms  start
+    ● vim-tmux-navigator 0.24ms  start
+    ● which-key.nvim 4.68ms  VimEnter
 
-  Not Loaded (1)
+  Not Loaded (2)
+    ○ copilot.lua  Copilot  InsertEnter 
     ○ crates.nvim  rust  toml 
 ```

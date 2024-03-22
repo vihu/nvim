@@ -30,3 +30,9 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Save and quit with leader key
 vim.keymap.set('n', ',w', ':w!<cr>', { desc = 'Save buffer' })
 vim.keymap.set('n', ',q', ':q<cr>', { desc = 'Quit entirely' })
+
+-- Shift + J/K moves selected lines down/up in visual Mode
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = 'Move selected line down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = 'Move selected line up' })
+-- Prevent cursor from jumping back
+vim.keymap.set('v', 'y', 'ygv<esc>', { noremap = true, silent = true, desc = 'Stop cursor from jumping back in visual mode' })

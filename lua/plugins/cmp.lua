@@ -15,9 +15,6 @@ return {
         return 'make install_jsregexp'
       end)(),
       dependencies = {
-        -- `friendly-snippets` contains a variety of premade snippets.
-        --    See the README about individual language/framework/plugin snippets:
-        --    https://github.com/rafamadriz/friendly-snippets
         {
           'rafamadriz/friendly-snippets',
           config = function()
@@ -26,9 +23,21 @@ return {
         },
       },
     },
+    -- luasnip completion source
     'saadparwaiz1/cmp_luasnip',
+    -- LSP completion source
     'hrsh7th/cmp-nvim-lsp',
+    -- Path completion source
     'hrsh7th/cmp-path',
+    -- VS Code like icons for completion sources
+    'onsails/lspkind.nvim',
+    -- Copilot completion source
+    {
+      'zbirenbaum/copilot-cmp',
+      config = function()
+        require('copilot_cmp').setup()
+      end,
+    },
   },
   config = function()
     -- See `:help cmp`
@@ -82,14 +91,23 @@ return {
             luasnip.jump(-1)
           end
         end, { 'i', 's' }),
-
-        -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-        --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
+
       sources = {
+        { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+      },
+
+      formatting = {
+        format = require('lspkind').cmp_format {
+          mode = 'symbol',
+          max_width = '50',
+          symbol_map = { Copilot = '' },
+        },
+        expandable_indicator = true,
+        fields = { 'abbr', 'kind', 'menu' },
       },
     }
   end,
