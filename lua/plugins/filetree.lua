@@ -4,6 +4,7 @@ return {
   lazy = false,
   keys = {
     { '<leader>f', ':NvimTreeToggle<CR>', desc = '[T]oggle [F]iletree', silent = true },
+    { ',e', ':NvimTreeToggle<CR>', desc = '[T]oggle [F]iletree', silent = true },
   },
   dependencies = {
     'nvim-tree/nvim-web-devicons',

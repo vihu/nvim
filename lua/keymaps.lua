@@ -28,5 +28,5 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Save and quit with leader key
-vim.keymap.set('n', '<leader>w', ':w!<cr>', { desc = 'Save buffer' })
-vim.keymap.set('n', '<leader>q', ':q<cr>', { desc = 'Quit entirely' })
+vim.keymap.set('n', ',w', ':w!<cr>', { desc = 'Save buffer' })
+vim.keymap.set('n', ',q', ':q<cr>', { desc = 'Quit entirely' })
