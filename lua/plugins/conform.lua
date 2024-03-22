@@ -13,13 +13,19 @@ return {
       }
     end,
     formatters_by_ft = {
+      javascript = { 'prettierd' },
+      typescript = { 'prettierd' },
+      javascriptreact = { 'prettierd' },
+      typescriptreact = { 'prettierd' },
+      css = { 'prettierd' },
+      html = { 'prettierd' },
+      json = { 'prettierd' },
+      yaml = { 'prettierd' },
+      markdown = { 'prettierd' },
       lua = { 'stylua' },
-      -- Conform can also run multiple formatters sequentially
+      sql = { 'sql_formatter' },
       python = { 'isort', 'black' },
-      --
-      -- You can use a sub-list to tell conform to run *until* a formatter
-      -- is found.
-      javascript = { { 'prettierd' } },
+      sh = { 'shfmt' },
     },
   },
 }

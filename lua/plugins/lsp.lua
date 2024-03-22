@@ -14,6 +14,7 @@ return {
     -- used for completion, annotations and signatures of Neovim apis
     { 'folke/neodev.nvim', opts = {} },
 
+    -- Add support for LSP inlay hints, only till nvim --version < 0.10
     { 'lvimuser/lsp-inlayhints.nvim', opts = {} },
   },
   config = function()
@@ -134,6 +135,9 @@ return {
       'stylua',
       'black',
       'isort',
+      'prettierd',
+      'shfmt',
+      'sql-formatter',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
