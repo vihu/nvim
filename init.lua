@@ -18,4 +18,5 @@ require('lazy').setup {
   -- Navigate between nvim and tmux seamlessly
   'christoomey/vim-tmux-navigator',
   { import = 'plugins' },
+  { import = 'colorschemes' },
 }

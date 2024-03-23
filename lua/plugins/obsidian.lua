@@ -39,7 +39,8 @@ return {
       name = 'telescope.nvim',
     },
     follow_url_func = function(url)
-      vim.fn.jobstart { 'xdg-open', url }
+      local open_cmd = vim.fn.has 'macunix' == 1 and 'open' or 'xdg-open'
+      vim.fn.jobstart { open_cmd, url }
     end,
     ui = {
       enable = false,
