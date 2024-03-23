@@ -17,6 +17,8 @@ require('lazy').setup {
   'tpope/vim-sleuth',
   -- Navigate between nvim and tmux seamlessly
   'christoomey/vim-tmux-navigator',
+  -- Make quickfix window modifiable for project-wide renaming with ctrl+q
+  { 'stefandtw/quickfix-reflector.vim', event = 'VeryLazy' },
   { import = 'plugins' },
   { import = 'colorschemes' },
 }

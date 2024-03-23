@@ -6,8 +6,9 @@ return {
   priority = 1000,
   config = function()
     require('kanagawa').setup {
-      undercurl = true,
-      commentStyle = { italic = true },
+      compile = true,
+      undercurl = false,
+      commentStyle = { italic = false },
       functionStyle = { bold = false, italic = false },
       keywordStyle = { bold = false, italic = false },
       statementStyle = { bold = false, italic = false },
