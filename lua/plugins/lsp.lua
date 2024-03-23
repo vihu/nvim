@@ -82,6 +82,9 @@ return {
             buffer = event.buf,
             callback = vim.lsp.buf.clear_references,
           })
+
+          -- Add inlay hints for the current buffer (applicable till nvim version < 0.10)
+          require('lsp-inlayhints').on_attach(client, event.buf)
         end
       end,
     })
@@ -95,7 +98,7 @@ return {
         plugins = {
           pycodestyle = {
             ignore = { 'W391' },
-            maxLineLength = 100,
+            maxLineLength = 120,
           },
         },
       },
