@@ -3,7 +3,7 @@ return {
   version = '*',
   lazy = false,
   keys = {
-    { '<leader>f', ':NvimTreeToggle<CR>', desc = '[T]oggle [F]iletree', silent = true },
+    { '<leader>f', ':NvimTreeToggle<CR>', desc = '[F]iletree [T]oggle', silent = true },
     { ',e', ':NvimTreeToggle<CR>', desc = '[T]oggle [F]iletree', silent = true },
   },
   dependencies = {
