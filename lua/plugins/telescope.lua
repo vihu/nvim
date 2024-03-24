@@ -22,34 +22,7 @@ return {
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
   config = function()
-    require('telescope').setup {
-      pickers = {
-        find_files = {
-          theme = 'ivy',
-        },
-        grep_string = {
-          theme = 'ivy',
-        },
-        live_grep = {
-          theme = 'ivy',
-        },
-        help_tags = {
-          theme = 'ivy',
-        },
-        keymaps = {
-          theme = 'ivy',
-        },
-        resume = {
-          theme = 'ivy',
-        },
-        oldfiles = {
-          theme = 'ivy',
-        },
-        buffers = {
-          theme = 'ivy',
-        },
-      },
-    }
+    require('telescope').setup {}
 
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
@@ -61,40 +34,90 @@ return {
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
-    nmap('<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-    nmap('<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-    nmap('<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-    nmap('<c-p>', builtin.find_files, { desc = '[S]earch [F]iles' })
-    nmap('<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-    nmap('<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-    nmap('<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-    nmap(',,', builtin.live_grep, { desc = '[S]earch (live grep)' })
-    nmap('<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-    nmap('<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-    nmap('<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-    nmap('<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+    local theme = function(args)
+      return require('telescope.themes').get_ivy(args)
+    end
 
-    -- Slightly advanced example of overriding default behavior and theme
+    -- Search documentation
+    nmap('<leader>sh', function()
+      builtin.help_tags(theme { winblend = 10 })
+    end, { desc = '[S]earch [H]elp' })
+
+    -- Search keymaps
+    nmap('<leader>sk', function()
+      builtin.keymaps(theme { winblend = 10 })
+    end, { desc = '[S]earch [K]eymaps' })
+
+    -- Search files
+    nmap('<leader>sf', function()
+      builtin.find_files(theme { winblend = 10 })
+    end, { desc = '[S]earch [F]iles' })
+
+    -- Search files with Ctrl-P
+    nmap('<c-p>', function()
+      builtin.find_files(theme { winblend = 10 })
+    end, { desc = '[S]earch [F]iles' })
+
+    -- Search select telescope
+    nmap('<leader>ss', function()
+      builtin.builtin(theme { winblend = 10 })
+    end, { desc = '[S]earch [S]elect Telescope' })
+
+    -- Search current word
+    nmap('<leader>sw', function()
+      builtin.grep_string(theme { winblend = 10 })
+    end, { desc = '[S]earch current [W]ord' })
+
+    -- Search with live grep
+    nmap('<leader>sg', function()
+      builtin.live_grep(theme { winblend = 10 })
+    end, { desc = '[S]earch by [G]rep' })
+
+    -- Search with live grep using ,,
+    nmap(',,', function()
+      builtin.live_grep(theme { winblend = 10 })
+    end, { desc = '[S]earch (live grep)' })
+
+    -- Search diagnostics
+    nmap('<leader>sd', function()
+      builtin.diagnostics(theme { winblend = 10 })
+    end, { desc = '[S]earch [D]iagnostics' })
+
+    -- Search resume from previous search
+    nmap('<leader>sr', function()
+      builtin.resume(theme { winblend = 10 })
+    end, { desc = '[S]earch [R]esume' })
+
+    -- Search recent files
+    nmap('<leader>s.', function()
+      builtin.oldfiles(theme { winblend = 10 })
+    end, { desc = '[S]earch Recent Files ("." for repeat)' })
+
+    -- Search open buffers
+    nmap('<leader><leader>', function()
+      builtin.buffers(theme { winblend = 10 })
+    end, { desc = '[ ] Find existing buffers' })
+
+    -- Fuzzy search in current buffer (without preview)
     nmap('<leader>/', function()
-      -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_ivy {
+      builtin.current_buffer_fuzzy_find(theme {
         winblend = 10,
         previewer = false,
       })
     end, { desc = '[/] Fuzzily search in current buffer' })
 
-    -- It's also possible to pass additional configuration options.
-    --  See `:help telescope.builtin.live_grep()` for information about particular keys
+    -- Search in open files
     nmap('<leader>s/', function()
-      builtin.live_grep {
+      builtin.live_grep(theme {
+        winblend = 10,
         grep_open_files = true,
         prompt_title = 'Live Grep in Open Files',
-      }
+      })
     end, { desc = '[S]earch [/] in Open Files' })
 
-    -- Shortcut for searching your Neovim configuration files
+    -- Search neovim config files
     nmap('<leader>sn', function()
-      builtin.find_files { cwd = vim.fn.stdpath 'config' }
+      builtin.find_files(theme { cwd = vim.fn.stdpath 'config', winblend = 10 })
     end, { desc = '[S]earch [N]eovim files' })
   end,
 }
