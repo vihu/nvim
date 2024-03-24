@@ -17,23 +17,42 @@ return {
         return vim.fn.executable 'make' == 1
       end,
     },
-    { 'nvim-telescope/telescope-ui-select.nvim' },
 
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
   config = function()
     require('telescope').setup {
-      extensions = {
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
+      pickers = {
+        find_files = {
+          theme = 'ivy',
+        },
+        grep_string = {
+          theme = 'ivy',
+        },
+        live_grep = {
+          theme = 'ivy',
+        },
+        help_tags = {
+          theme = 'ivy',
+        },
+        keymaps = {
+          theme = 'ivy',
+        },
+        resume = {
+          theme = 'ivy',
+        },
+        oldfiles = {
+          theme = 'ivy',
+        },
+        buffers = {
+          theme = 'ivy',
         },
       },
     }
 
     -- Enable Telescope extensions if they are installed
     pcall(require('telescope').load_extension, 'fzf')
-    pcall(require('telescope').load_extension, 'ui-select')
     pcall(require('telescope').load_extension, 'noice')
 
     local nmap = function(keys, func, desc)
@@ -49,7 +68,7 @@ return {
     nmap('<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
     nmap('<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
     nmap('<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-    nmap(',,', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+    nmap(',,', builtin.live_grep, { desc = '[S]earch (live grep)' })
     nmap('<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
     nmap('<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     nmap('<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
@@ -58,7 +77,7 @@ return {
     -- Slightly advanced example of overriding default behavior and theme
     nmap('<leader>/', function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_ivy {
         winblend = 10,
         previewer = false,
       })
