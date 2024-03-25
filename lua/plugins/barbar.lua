@@ -15,6 +15,7 @@ return {
   },
   keys = {
     { '<leader>bx', '<cmd>BufferCloseAllButCurrent<cr>', desc = '[B]uffer e[X]it others', silent = true },
+    { ',bx', '<cmd>BufferCloseAllButCurrent<cr>', desc = '[B]uffer e[X]it others', silent = true },
     { ',a', '<cmd>BufferPrevious<cr>', desc = 'buffer prev', silent = true },
     { ',s', '<cmd>BufferNext<cr>', desc = 'buffer next', silent = true },
   },
