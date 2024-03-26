@@ -66,3 +66,6 @@ opt.termguicolors = true
 
 -- Don't set swapfile
 opt.swapfile = false
+
+-- Hide cmdline unless needed
+opt.cmdheight = 0

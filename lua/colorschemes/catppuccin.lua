@@ -1,8 +1,8 @@
 return {
   'catppuccin/nvim',
   lazy = false,
-  enabled = false,
-  cond = false,
+  enabled = true,
+  cond = true,
   priority = 1000,
   name = 'catppuccin',
   config = function()
@@ -37,7 +37,7 @@ return {
         percentage = 0.05,
       },
       integrations = {
-        barbar = false,
+        barbar = true,
         cmp = true,
         gitsigns = true,
         mini = true,
@@ -46,7 +46,9 @@ return {
         notify = true,
         noice = true,
         nvimtree = true,
-        telescope = true,
+        telescope = {
+          enabled = true,
+        },
         native_lsp = {
           enabled = true,
           virtual_text = {
@@ -67,6 +69,7 @@ return {
         },
         treesitter = true,
         fidget = true,
+        which_key = true,
       },
     }
 
