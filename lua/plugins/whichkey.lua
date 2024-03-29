@@ -23,7 +23,8 @@ return {
       ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
       ['<leader>t'] = { name = '[T]rim', _ = 'which_key_ignore' },
       ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      ['<leader>x'] = { name = 'e[X]ecute', _ = 'which_key_ignore' },
+      ['<leader>e'] = { name = '[E]xecute', _ = 'which_key_ignore' },
+      ['<leader>x'] = { name = '[X]trouble', _ = 'which_key_ignore' },
       [',b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
     }
   end,
