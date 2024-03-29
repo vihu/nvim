@@ -39,7 +39,6 @@ return {
       integrations = {
         barbar = true,
         cmp = true,
-        gitsigns = true,
         mini = true,
         mason = true,
         markdown = true,

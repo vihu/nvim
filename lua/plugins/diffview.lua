@@ -15,7 +15,7 @@ return {
   },
   keys = {
     { '<leader>gd', ':DiffviewOpen<CR>', desc = '[G]it [D]iff', silent = true },
-    { '<leader>gc', ':DiffviewClose<CR>', desc = '[G]it [C]lose diff', silent = true },
+    { '<leader>gc', ':DiffviewClose<CR>', desc = '[G]it [C]lose', silent = true },
     { '<leader>gh', ':DiffviewFileHistory %<CR>', desc = '[G]it [H]istory', silent = true },
   },
 }

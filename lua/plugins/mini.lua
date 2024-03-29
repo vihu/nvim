@@ -1,6 +1,10 @@
 return {
   'echasnovski/mini.nvim',
   config = function()
+    local nmap = function(keys, func, desc)
+      vim.keymap.set('n', keys, func, desc)
+    end
+
     -- Better Around/Inside textobjects
     --
     -- Examples:
@@ -24,7 +28,7 @@ return {
     require('mini.trailspace').setup {
       only_in_normal_buffers = true,
     }
-    vim.keymap.set('n', '<leader>tw', ':lua MiniTrailspace.trim()<CR>', { desc = '[T]railing [W]hitespace' })
+    nmap('<leader>tw', ':lua MiniTrailspace.trim()<CR>', { desc = '[T]railing [W]hitespace' })
 
     -- Comment support
     require('mini.comment').setup {
@@ -37,16 +41,22 @@ return {
 
     -- Buffer remove
     require('mini.bufremove').setup()
-    vim.keymap.set('n', '<leader>bd', ':lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
-    vim.keymap.set('n', ',bd', ':lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
+    nmap('<leader>bd', ':lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
+    nmap(',bd', ':lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
 
-    -- Simple statusline
-    local statusline = require 'mini.statusline'
-    statusline.setup { use_icons = vim.g.have_nerd_font }
-
-    ---@diagnostic disable-next-line: duplicate-set-field
-    statusline.section_location = function()
-      return '%2l:%-2v'
-    end
+    -- Git diff support
+    require('mini.diff').setup {
+      view = {
+        style = 'sign',
+        signs = {
+          add = '+',
+          change = '~',
+          delete = '_',
+        },
+      },
+    }
+    nmap('<leader>go', function()
+      require('mini.diff').toggle_overlay(0)
+    end, { desc = '[G]it [O]verlay' })
   end,
 }
