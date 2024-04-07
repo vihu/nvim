@@ -32,12 +32,12 @@ return {
     -- VS Code like icons for completion sources
     'onsails/lspkind.nvim',
     -- Copilot completion source
-    {
-      'zbirenbaum/copilot-cmp',
-      config = function()
-        require('copilot_cmp').setup()
-      end,
-    },
+    -- {
+    --   'zbirenbaum/copilot-cmp',
+    --   config = function()
+    --     require('copilot_cmp').setup()
+    --   end,
+    -- },
   },
   config = function()
     -- See `:help cmp`
