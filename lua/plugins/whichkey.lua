@@ -4,7 +4,7 @@ return {
   config = function()
     require('which-key').setup {
       window = {
-        winblend = 40,
+        winblend = 10,
       },
       triggers_blacklist = {
         -- Disable which-key in normal mode for these keys

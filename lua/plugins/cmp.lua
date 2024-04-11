@@ -31,13 +31,6 @@ return {
     'hrsh7th/cmp-path',
     -- VS Code like icons for completion sources
     'onsails/lspkind.nvim',
-    -- Copilot completion source
-    -- {
-    --   'zbirenbaum/copilot-cmp',
-    --   config = function()
-    --     require('copilot_cmp').setup()
-    --   end,
-    -- },
   },
   config = function()
     -- See `:help cmp`
@@ -94,7 +87,6 @@ return {
       },
 
       sources = {
-        { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
@@ -104,7 +96,6 @@ return {
         format = require('lspkind').cmp_format {
           mode = 'symbol',
           max_width = '50',
-          symbol_map = { Copilot = '' },
         },
         expandable_indicator = true,
         fields = { 'abbr', 'kind', 'menu' },
