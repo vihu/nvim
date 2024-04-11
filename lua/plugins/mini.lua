@@ -58,5 +58,20 @@ return {
     nmap('<leader>go', function()
       require('mini.diff').toggle_overlay(0)
     end, { desc = '[G]it [O]verlay' })
+
+    -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+    local hipatterns = require 'mini.hipatterns'
+    hipatterns.setup {
+      highlighters = {
+        fixme = { pattern = '%f[%w]()FIXME()%f[%W]', group = 'MiniHipatternsFixme' },
+        hack = { pattern = '%f[%w]()HACK()%f[%W]', group = 'MiniHipatternsHack' },
+        todo = { pattern = '%f[%w]()TODO()%f[%W]', group = 'MiniHipatternsTodo' },
+        note = { pattern = '%f[%w]()NOTE()%f[%W]', group = 'MiniHipatternsNote' },
+        xxx = { pattern = '%f[%w]()XXX()%f[%W]', group = 'MiniHipatternsFixme' },
+
+        -- Highlight hex color strings (`#rrggbb`) using that color
+        hex_color = hipatterns.gen_highlighter.hex_color(),
+      },
+    }
   end,
 }

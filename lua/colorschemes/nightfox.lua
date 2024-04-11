@@ -1,7 +1,7 @@
 return {
   'EdenEast/nightfox.nvim',
   lazy = false,
-  enabled = false,
+  enabled = true,
   priority = 1000,
   config = function()
     require('nightfox').setup {
@@ -15,6 +15,6 @@ return {
       },
     }
 
-    vim.cmd 'colorscheme nightfox'
+    vim.cmd 'colorscheme dayfox'
   end,
 }
