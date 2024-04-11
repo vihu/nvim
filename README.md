@@ -1,5 +1,9 @@
 # nvim
 
+- Uses [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) as the initial template
+- Separates out plugins to separate files
+- Adds some extra plugins which I personally use (obsidian, noice etc.)
+
 ## Requirements
 
 - Install nodejs, recommended: [fnm](https://github.com/Schniz/fnm).
@@ -38,57 +42,55 @@ Ignore warnings but make sure the following work:
 Output of `:Lazy show`:
 
 ```bash
-  Total: 46 plugins
+  Total: 44 plugins
 
-  Loaded (42)
-    ● barbar.nvim 1.92ms  start
-    ● catppuccin 1.66ms  start
-    ● cmp-nvim-lsp 0.02ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
-    ● cmp-path 0.64ms  nvim-cmp
-    ● cmp_luasnip 2.89ms  nvim-cmp
-    ● conform.nvim 0.45ms  start
-    ● copilot-cmp 0.73ms  nvim-cmp
-    ● copilot.lua 2.75ms  InsertEnter
-    ● fidget.nvim 6.86ms  nvim-lspconfig
-    ● friendly-snippets 6.95ms  LuaSnip
-    ● lazy.nvim 2.82ms  init.lua
-    ● lsp-inlayhints.nvim 0.36ms  nvim-lspconfig
-    ● lspkind.nvim 0.06ms  nvim-cmp
-    ● lualine.nvim 3.19ms  start
-    ● LuaSnip 7.6ms  nvim-cmp
+  Loaded (38)
+    ● barbar.nvim 3.09ms  start
+    ● cmp-nvim-lsp 0.07ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
+    ● cmp-path 0.5ms  nvim-cmp
+    ● cmp_luasnip 3.04ms  nvim-cmp
+    ● conform.nvim 0.26ms  start
+    ● dressing.nvim 0.48ms  VeryLazy
+    ● fidget.nvim 1.96ms  nvim-lspconfig
+    ● friendly-snippets 7.1ms  LuaSnip
+    ● lazy.nvim 2.5ms  init.lua
+    ● lsp-inlayhints.nvim 0.43ms  nvim-lspconfig
+    ● lspkind.nvim 0.05ms  nvim-cmp
+    ● lualine.nvim 4.17ms  start
+    ● LuaSnip 7.65ms  nvim-cmp
     ● markdown-preview.nvim 0.16ms  markdown
     ● mason-lspconfig.nvim 0.09ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 1.57ms  nvim-lspconfig
-    ● mason.nvim 0.08ms  nvim-lspconfig
-    ● mini.nvim 1.06ms  start
-    ● neodev.nvim 0.47ms  nvim-lspconfig
-    ● neoscroll.nvim 0.35ms  start
-    ● noice.nvim 1.11ms 󰢱 telescope._extensions.noice  telescope.nvim
-    ● nui.nvim 0.21ms  noice.nvim
-    ● nvim-cmp 13.11ms  InsertEnter
-    ● nvim-colorizer.lua 1.2ms  VeryLazy
-    ● nvim-lspconfig 12.21ms  start
-    ● nvim-notify 0.19ms  noice.nvim
-    ● nvim-tree.lua 4.43ms 󰢱 nvim-tree.api  fidget.nvim
-    ● nvim-treesitter 2.2ms  start
-    ● nvim-web-devicons 0.12ms  lualine.nvim
-    ● obsidian.nvim 2.1ms  markdown
-    ● plenary.nvim 0.29ms  telescope.nvim
-    ● quickfix-reflector.vim 0.19ms  VeryLazy
-    ● telescope-fzf-native.nvim 0.17ms  telescope.nvim
-    ● telescope.nvim 5.72ms  VimEnter
-    ● todo-comments.nvim 0.96ms  VimEnter
-    ● trouble.nvim 5.72ms 󰢱 trouble  lua
-    ● vim-just 0.03ms  BufReadPre
-    ● vim-sleuth 0.24ms  start
-    ● vim-tmux-navigator 0.19ms  start
-    ● which-key.nvim 5.59ms  VimEnter
+    ● mason-tool-installer.nvim 1.25ms  nvim-lspconfig
+    ● mason.nvim 0.1ms  nvim-lspconfig
+    ● mini.nvim 1.17ms  start
+    ● neodev.nvim 0.49ms  nvim-lspconfig
+    ● neoscroll.nvim 0.34ms  start
+    ● nightfox.nvim 1.57ms  start
+    ● noice.nvim 0.9ms 󰢱 telescope._extensions.noice  telescope.nvim
+    ● nui.nvim 0.16ms  noice.nvim
+    ● nvim-cmp 12.39ms 󰢱 cmp  obsidian.nvim
+    ● nvim-colorizer.lua 0.73ms  VeryLazy
+    ● nvim-lspconfig 6.52ms  start
+    ● nvim-tree.lua 3.26ms  start
+    ● nvim-treesitter 2.4ms  start
+    ● nvim-web-devicons 0.13ms  lualine.nvim
+    ● obsidian.nvim 15.53ms  markdown
+    ● plenary.nvim 0.22ms  telescope.nvim
+    ● quickfix-reflector.vim 0.17ms  VeryLazy
+    ● telescope-fzf-native.nvim 0.14ms  telescope.nvim
+    ● telescope.nvim 4.48ms  VimEnter
+    ● vim-just 0.05ms  BufReadPre
+    ● vim-sleuth 0.22ms  start
+    ● vim-tmux-navigator 0.11ms  start
+    ● which-key.nvim 7.28ms  VimEnter
 
   Not Loaded (3)
     ○ crates.nvim  rust  toml
     ○ diffview.nvim  <leader>gd  <leader>gc  <leader>gh
-    ○ vimux  <leader>er  <leader>ec
+    ○ trouble.nvim  <leader>xs  <leader>xb  <leader>xx  <leader>xl  <leader>xq
 
-  Disabled (1)
+  Disabled (3)
+    ○ bamboo.nvim
+    ○ catppuccin
     ○ kanagawa.nvim
 ```
