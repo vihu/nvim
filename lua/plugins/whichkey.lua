@@ -24,6 +24,7 @@ return {
       ['<leader>t'] = { name = '[T]rim', _ = 'which_key_ignore' },
       ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
       ['<leader>x'] = { name = '[X]trouble', _ = 'which_key_ignore' },
+      ['<leader>m'] = { name = '[M]arkdown', _ = 'which_key_ignore' },
       [',b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
     }
   end,
