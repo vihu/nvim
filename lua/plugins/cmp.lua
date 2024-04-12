@@ -29,6 +29,17 @@ return {
     'hrsh7th/cmp-nvim-lsp',
     -- Path completion source
     'hrsh7th/cmp-path',
+    -- ripgrep completion source
+    'lukas-reineke/cmp-rg',
+    -- crates completion
+    {
+      'saecki/crates.nvim',
+      ft = { 'rust', 'toml' },
+      tag = 'stable',
+      config = function()
+        require('crates').setup {}
+      end,
+    },
     -- VS Code like icons for completion sources
     'onsails/lspkind.nvim',
   },
@@ -90,6 +101,9 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+        { name = 'rg' },
+        { name = 'crates' },
+        { name = 'obsidian' },
       },
 
       formatting = {
@@ -99,6 +113,10 @@ return {
         },
         expandable_indicator = true,
         fields = { 'abbr', 'kind', 'menu' },
+      },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
       },
     }
   end,
