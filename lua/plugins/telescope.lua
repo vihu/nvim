@@ -20,6 +20,15 @@ return {
 
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+
+    -- Show recently selected search items first by default
+    {
+      'prochri/telescope-all-recent.nvim',
+      dependencies = {
+        'kkharji/sqlite.lua',
+      },
+      opts = {},
+    },
   },
   config = function()
     require('telescope').setup {}
