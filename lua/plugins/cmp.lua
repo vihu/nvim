@@ -27,6 +27,8 @@ return {
     'saadparwaiz1/cmp_luasnip',
     -- LSP completion source
     'hrsh7th/cmp-nvim-lsp',
+    -- Buffer completion source
+    'hrsh7th/cmp-buffer',
     -- Path completion source
     'hrsh7th/cmp-path',
     -- ripgrep completion source
@@ -104,12 +106,13 @@ return {
         { name = 'rg' },
         { name = 'crates' },
         { name = 'obsidian' },
+        { name = 'buffer' },
       },
 
       formatting = {
         format = require('lspkind').cmp_format {
           mode = 'symbol',
-          max_width = '50',
+          max_width = '30',
         },
         expandable_indicator = true,
         fields = { 'abbr', 'kind', 'menu' },
