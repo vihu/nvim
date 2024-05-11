@@ -36,7 +36,7 @@ return {
       date_format = '%Y-%m-%d',
     },
     picker = {
-      name = 'telescope.nvim',
+      name = 'fzf-lua',
     },
     follow_url_func = function(url)
       local open_cmd = vim.fn.has 'macunix' == 1 and 'open' or 'xdg-open'
