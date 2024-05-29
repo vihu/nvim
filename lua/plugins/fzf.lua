@@ -1,3 +1,11 @@
+-- Function to check if a command exists in the system's PATH
+local function command_exists(cmd)
+  return vim.fn.executable(cmd) == 1
+end
+
+-- Determine the appropriate command based on the availability of fdfind or fd
+local find_cmd = command_exists 'fdfind' and 'fdfind' or 'fd'
+
 return {
   'ibhagwan/fzf-lua',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -31,13 +39,13 @@ return {
     -- Use ctrl-p for finding files
     {
       '<C-P>',
-      ":lua require('fzf-lua').files({ cmd = 'fd --type f --exclude node_modules --exclude __pycache__' })<CR>",
+      ":lua require('fzf-lua').files({ cmd = '" .. find_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
       desc = '[S]earch [F]iles',
       silent = true,
     },
     {
       '<leader>sf',
-      ":lua require('fzf-lua').files({ cmd = 'fd --type f --exclude node_modules --exclude __pycache__' })<CR>",
+      ":lua require('fzf-lua').files({ cmd = '" .. find_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
       desc = '[S]earch [F]iles',
       silent = true,
     },
