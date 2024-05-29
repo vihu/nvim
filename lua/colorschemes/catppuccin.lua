@@ -44,9 +44,6 @@ return {
         notify = true,
         noice = true,
         nvimtree = true,
-        telescope = {
-          enabled = true,
-        },
         native_lsp = {
           enabled = true,
           virtual_text = {
