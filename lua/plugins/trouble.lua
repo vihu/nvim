@@ -1,7 +1,5 @@
 return {
   'folke/trouble.nvim',
-  -- NOTE: Change when v3 is stable
-  branch = 'dev',
   opts = {},
   keys = {
     { '<leader>xx', '<cmd>Trouble diagnostics toggle focus=true<cr>', desc = '[T]rouble Diagnostics', silent = true },
