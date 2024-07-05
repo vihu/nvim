@@ -51,9 +51,9 @@ return {
 
         -- Fuzzy find all the symbols in your current document.
         --  Symbols are things like variables, functions, types, etc.
-        nmap('<leader>ss', function()
+        nmap('<leader>fs', function()
           require('fzf-lua').lsp_document_symbols()
-        end, '[S]earch document [S]ymbols')
+        end, '[F]ind document [S]ymbols')
 
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.

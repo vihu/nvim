@@ -40,27 +40,27 @@ return {
     {
       '<C-P>',
       ":lua require('fzf-lua').files({ cmd = '" .. find_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
-      desc = '[S]earch [F]iles',
+      desc = '[F]ind [F]iles',
       silent = true,
     },
     {
-      '<leader>sf',
+      '<leader>ff',
       ":lua require('fzf-lua').files({ cmd = '" .. find_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
-      desc = '[S]earch [F]iles',
+      desc = '[F]ind [F]iles',
       silent = true,
     },
     -- Search neovim config files with sn
     {
-      '<leader>sn',
+      '<leader>fn',
       ":lua require('fzf-lua').files({ cwd = '~/.config/nvim' })<CR>",
-      desc = '[S]earch [N]eovim [F]iles',
+      desc = '[F]ind [N]eovim [F]iles',
       silent = true,
     },
     -- Use sg for live grep
     {
-      '<leader>sg',
+      '<leader>fg',
       ":lua require('fzf-lua').live_grep({ multiprocess = true })<CR>",
-      desc = '[S]earch by [G]rep',
+      desc = '[F]ind by [G]rep',
       silent = true,
     },
     -- Use ,, for live grep
@@ -72,16 +72,16 @@ return {
     },
     -- Use s/ for live grep in current buffer
     {
-      '<leader>s/',
+      '<leader>f/',
       ":lua require('fzf-lua').lgrep_curbuf({ multiprocess = true })<CR>",
-      desc = '[S]earch [/] in buffer',
+      desc = '[F]ind [/] in buffer',
       silent = true,
     },
     -- Search help with sh
     {
-      '<leader>sh',
+      '<leader>fh',
       ":lua require('fzf-lua').help_tags()<CR>",
-      desc = '[S]earch [H]elp',
+      desc = '[F]ind [H]elp',
       silent = true,
     },
     -- Use two spaces for open buffers
@@ -93,30 +93,30 @@ return {
     },
     -- Use <leader>sd for workspace diagnostics
     {
-      '<leader>sd',
+      '<leader>fd',
       ":lua require('fzf-lua').diagnostics_workspace()<CR>",
-      desc = '[S]each [D]iagnostics',
+      desc = '[F]ind [D]iagnostics',
       silent = true,
     },
     -- Search current word
     {
-      '<leader>sw',
+      '<leader>fw',
       ":lua require('fzf-lua').grep_cword()<CR>",
-      desc = '[S]each current [W]ord',
+      desc = '[F]ind current [W]ord',
       silent = true,
     },
     -- Search Resume
     {
-      '<leader>sr',
+      '<leader>fr',
       ":lua require('fzf-lua').live_grep_resume({multiprocess = true})<CR>",
-      desc = '[S]each [R]esume',
+      desc = '[F]ind [R]esume',
       silent = true,
     },
     -- Search old files
     {
-      '<leader>s.',
+      '<leader>f.',
       ":lua require('fzf-lua').oldfiles()<CR>",
-      desc = '[S]each Recent Files ("." for Repeat)',
+      desc = '[F]ind Recent Files ("." for Repeat)',
       silent = true,
     },
   },
