@@ -7,12 +7,12 @@ return {
     'nvim-lua/plenary.nvim',
   },
   keys = {
-    { '<leader>ns', ':ObsidianSearch<CR>', desc = 'Search notes', silent = true },
-    { '<leader>nn', ':ObsidianNew<CR>', desc = 'New note', silent = true },
-    { '<leader>nd', ':ObsidianDailies<CR>', desc = 'Daily notes', silent = true },
-    { '<leader>nw', ':ObsidianWorkspace<CR>', desc = 'Workspaces for notes', silent = true },
-    { '<leader>np', ':ObsidianPasteImg<CR>', desc = 'Paste image in note', silent = true },
-    { '<leader>no', ':ObsidianFollowLink<CR>', desc = 'Open note link', silent = true },
+    { '<leader>os', ':ObsidianSearch<CR>', desc = 'Search notes', silent = true },
+    { '<leader>on', ':ObsidianNew<CR>', desc = 'New note', silent = true },
+    { '<leader>od', ':ObsidianDailies<CR>', desc = 'Daily notes', silent = true },
+    { '<leader>ow', ':ObsidianWorkspace<CR>', desc = 'Workspaces for notes', silent = true },
+    { '<leader>op', ':ObsidianPasteImg<CR>', desc = 'Paste image in note', silent = true },
+    { '<leader>oo', ':ObsidianFollowLink<CR>', desc = 'Open note link', silent = true },
   },
   opts = {
     workspaces = {

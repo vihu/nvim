@@ -42,58 +42,58 @@ Ignore warnings but make sure the following work:
 Output of `:Lazy show`:
 
 ```bash
-  Total: 46 plugins
+  Total: 47 plugins
 
   Loaded (38)
-    ● barbar.nvim 19.64ms  start
-    ● cmp-buffer 0.4ms  nvim-cmp
-    ● cmp-nvim-lsp 0.08ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
-    ● cmp-path 0.33ms  nvim-cmp
-    ● cmp-rg 0.33ms  nvim-cmp
-    ● cmp_luasnip 2.33ms  nvim-cmp
-    ● conform.nvim 0.38ms  start
-    ● crates.nvim 1.53ms  nvim-cmp
-    ● dressing.nvim 0.81ms  VeryLazy
-    ● fidget.nvim 4.67ms  nvim-lspconfig
-    ● friendly-snippets 11.1ms  LuaSnip
-    ● lazy.nvim 38.64ms  init.lua
-    ● lsp-inlayhints.nvim 0.51ms  nvim-lspconfig
+    ● barbar.nvim 16.4ms  start
+    ● cmp-buffer 0.48ms  nvim-cmp
+    ● cmp-nvim-lsp 0.02ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
+    ● cmp-path 0.34ms  nvim-cmp
+    ● cmp-rg 0.4ms  nvim-cmp
+    ● cmp_luasnip 2.56ms  nvim-cmp
+    ● conform.nvim 0.34ms  start
+    ● crates.nvim 2.18ms  nvim-cmp
+    ● dressing.nvim 0.71ms  VeryLazy
+    ● fidget.nvim 9.52ms  nvim-lspconfig
+    ● friendly-snippets 14.2ms  LuaSnip
+    ● lazy.nvim 36.14ms  init.lua
+    ● lsp-inlayhints.nvim 0.46ms  nvim-lspconfig
     ● lspkind.nvim 0.03ms  nvim-cmp
-    ● lualine.nvim 18.3ms  start
-    ● LuaSnip 11.64ms  nvim-cmp
-    ● markdown-preview.nvim 0.24ms  markdown
-    ● mason-lspconfig.nvim 0.14ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 1.76ms  nvim-lspconfig
-    ● mason.nvim 0.16ms  nvim-lspconfig
-    ● mini.nvim 2.36ms  start
-    ● neodev.nvim 0.65ms  nvim-lspconfig
-    ● nightfox.nvim 3.04ms  start
-    ● noice.nvim 1.12ms  VeryLazy
-    ● nui.nvim 0.23ms  noice.nvim
-    ● nvim-cmp 17.8ms 󰢱 cmp  obsidian.nvim
-    ● nvim-colorizer.lua 1.1ms  VeryLazy
-    ● nvim-lspconfig 12.11ms  start
-    ● nvim-tree.lua 5.87ms  start
-    ● nvim-treesitter 20.6ms  start
-    ● nvim-web-devicons 0.26ms  barbar.nvim
-    ● obsidian.nvim 22.5ms  markdown
-    ● plenary.nvim 0.2ms  obsidian.nvim
-    ● quickfix-reflector.vim 0.17ms  VeryLazy
-    ● vim-just 0.06ms  BufReadPre
-    ● vim-sleuth 0.34ms  start
-    ● vim-tmux-navigator 0.29ms  start
-    ● which-key.nvim 9.32ms  VimEnter
+    ● lualine.nvim 16.18ms  start
+    ● LuaSnip 14.81ms  nvim-cmp
+    ● markdown-preview.nvim 0.22ms  markdown
+    ● mason-lspconfig.nvim 0.19ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 2.23ms  nvim-lspconfig
+    ● mason.nvim 0.24ms  nvim-lspconfig
+    ● mini.nvim 1.58ms  start
+    ● neodev.nvim 0.72ms  nvim-lspconfig
+    ● nightfox.nvim 2.21ms  start
+    ● noice.nvim 1.04ms  VeryLazy
+    ● nui.nvim 0.28ms  noice.nvim
+    ● nvim-cmp 22.16ms 󰢱 cmp  obsidian.nvim
+    ● nvim-colorizer.lua 1.59ms  VeryLazy
+    ● nvim-lspconfig 17.43ms  start
+    ● nvim-tree.lua 5.81ms 󰢱 nvim-tree.api  fidget.nvim
+    ● nvim-treesitter 17.83ms  start
+    ● nvim-web-devicons 0.21ms  barbar.nvim
+    ● obsidian.nvim 27.32ms  markdown
+    ● plenary.nvim 0.27ms  obsidian.nvim
+    ● quickfix-reflector.vim 0.21ms  VeryLazy
+    ● vim-just 0.04ms  BufReadPre
+    ● vim-sleuth 0.26ms  start
+    ● vim-tmux-navigator 0.23ms  start
+    ● which-key.nvim 9.14ms  VimEnter
 
-  Not Loaded (4)
+  Not Loaded (5)
     ○ diagflow.nvim  LspAttach
-    ○ diffview.nvim  <leader>gd  <leader>gc  <leader>gh
-    ○ fzf-lua  <C-P>  <leader>fd  <leader>fw  <leader>fr  <leader>f.  ,,  <leader>fh  <leader>ff  <leader><leader>  <leader>fn  <leader>fg  <leader>f/
-    ○ trouble.nvim  <leader>xb  <leader>xs  <leader>xl  <leader>xq  <leader>xx
+    ○ diffview.nvim  <leader>gh  <leader>gd  <leader>gc
+    ○ fzf-lua  ,,  <leader>ff  <leader><leader>  <leader>fn  <leader>fg  <leader>f/  <C-P>  <leader>fd  <leader>fw  <leader>fr  <leader>f.  <leader>fh
+    ○ grapple.nvim  <c-s>  ;
+    ○ trouble.nvim  <leader>xs  <leader>xl  <leader>xq  <leader>xx  <leader>xb
 
   Disabled (4)
     ○ bamboo.nvim
     ○ catppuccin
     ○ kanagawa.nvim
     ○ modus-themes.nvim
-
 ```

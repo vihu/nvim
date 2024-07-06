@@ -20,7 +20,20 @@ return {
       globalstatus = true,
       sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_b = {
+          'branch',
+          'diff',
+          'diagnostics',
+
+          {
+            function()
+              return require('grapple').name_or_index()
+            end,
+            cond = function()
+              return package.loaded['grapple'] and require('grapple').exists()
+            end,
+          },
+        },
         lualine_c = { { 'filename', path = 1 } },
         lualine_x = { 'filetype' },
         lualine_y = { 'progress' },
