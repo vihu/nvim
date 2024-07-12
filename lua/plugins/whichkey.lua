@@ -13,18 +13,29 @@ return {
     }
 
     -- Document existing key chains
-    require('which-key').register {
-      ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
-      ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-      ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-      ['<leader>o'] = { name = '[O]bsidian', _ = 'which_key_ignore' },
-      ['<leader>m'] = { name = '[M]arkdown', _ = 'which_key_ignore' },
-      ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-      ['<leader>t'] = { name = '[T]rim', _ = 'which_key_ignore' },
-      ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-      ['<leader>x'] = { name = '[X]trouble', _ = 'which_key_ignore' },
-      ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
-      [',b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
+    require('which-key').add {
+      { ',b', group = '[B]uffer' },
+      { ',b_', hidden = true },
+      { '<leader>b', group = '[B]uffer' },
+      { '<leader>b_', hidden = true },
+      { '<leader>c', group = '[C]ode' },
+      { '<leader>c_', hidden = true },
+      { '<leader>f', group = '[F]ind' },
+      { '<leader>f_', hidden = true },
+      { '<leader>g', group = '[G]it' },
+      { '<leader>g_', hidden = true },
+      { '<leader>m', group = '[M]arkdown' },
+      { '<leader>m_', hidden = true },
+      { '<leader>o', group = '[O]bsidian' },
+      { '<leader>o_', hidden = true },
+      { '<leader>r', group = '[R]ename' },
+      { '<leader>r_', hidden = true },
+      { '<leader>t', group = '[T]rim' },
+      { '<leader>t_', hidden = true },
+      { '<leader>w', group = '[W]orkspace' },
+      { '<leader>w_', hidden = true },
+      { '<leader>x', group = '[X]trouble' },
+      { '<leader>x_', hidden = true },
     }
   end,
 }

@@ -18,14 +18,14 @@ return {
     workspaces = {
       {
         name = 'work',
-        path = '~/syncthing/obsidian/work',
+        path = '~/syncthing-nas/obsidian/work',
         overrides = {
           notes_subdir = 'work',
         },
       },
       {
         name = 'personal',
-        path = '~/syncthing/obsidian/personal',
+        path = '~/syncthing-nas/obsidian/personal',
         overrides = {
           notes_subdir = 'personal',
         },

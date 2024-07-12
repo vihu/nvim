@@ -15,6 +15,6 @@ return {
       },
     }
 
-    vim.cmd 'colorscheme duskfox'
+    vim.cmd 'colorscheme nightfox'
   end,
 }
