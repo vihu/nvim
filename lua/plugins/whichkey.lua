@@ -3,6 +3,10 @@ return {
   event = 'VeryLazy',
   opts = {
     preset = 'helix',
+    plugins = {
+      marks = false,
+      registers = false,
+    },
     spec = {
       { '<leader>f', group = '[F]ind' },
       { '<leader>x', group = '[T]rouble' },
