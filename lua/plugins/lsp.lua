@@ -152,7 +152,6 @@ return {
       'prettierd',
       'shfmt',
       'sql-formatter',
-      'gopls',
       'zls',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
