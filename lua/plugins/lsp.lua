@@ -106,10 +106,14 @@ return {
 
     local servers = {
       pylsp = {
-        plugins = {
-          pycodestyle = {
-            ignore = { 'W391' },
-            maxLineLength = 120,
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                ignore = { 'W391' },
+                maxLineLength = 120,
+              },
+            },
           },
         },
       },
