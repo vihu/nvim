@@ -105,6 +105,8 @@ return {
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {
+      tsserver = {},
+      gopls = {},
       pylsp = {
         settings = {
           pylsp = {
@@ -132,7 +134,6 @@ return {
           },
         },
       },
-
       lua_ls = {
         settings = {
           Lua = {
@@ -172,5 +173,7 @@ return {
         end,
       },
     }
+
+    require('lspconfig').gleam.setup {}
   end,
 }

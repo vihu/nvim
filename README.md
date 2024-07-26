@@ -6,7 +6,7 @@
 
 ## Requirements
 
-- Install nodejs, recommended: [fnm](https://github.com/Schniz/fnm).
+- Install nodejs, recommended: [mise](https://github.com/jdx/mise)
 
 - Setup nodejs for neovim:
 
@@ -50,51 +50,51 @@ Output of `:Lazy show`:
 ```bash
   Total: 48 plugins
 
-  Loaded (41)
-    ● barbar.nvim 2.17ms  start
-    ● cmp-buffer 0.53ms  nvim-cmp
-    ● cmp-nvim-lsp 0.02ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
-    ● cmp-path 0.5ms  nvim-cmp
-    ● cmp-rg 0.45ms  nvim-cmp
-    ● cmp_luasnip 2.95ms  nvim-cmp
-    ● conform.nvim 0.26ms  start
-    ● crates.nvim 2.67ms  nvim-cmp
-    ● diagflow.nvim 0.58ms  LspAttach
-    ● dressing.nvim 0.41ms  VeryLazy
-    ● fidget.nvim 1.73ms  nvim-lspconfig
-    ● friendly-snippets 9.37ms  LuaSnip
-    ● fzf-lua 7.34ms  <C-P>
-    ● lazy.nvim 4.24ms  init.lua
-    ● lsp-inlayhints.nvim 0.3ms  nvim-lspconfig
-    ● lspkind.nvim 0.11ms  nvim-cmp
-    ● lualine.nvim 4.2ms  start
-    ● LuaSnip 10.24ms  nvim-cmp
-    ● mason-lspconfig.nvim 0.09ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 0.74ms  nvim-lspconfig
+  Loaded (40)
+    ● barbar.nvim 1.55ms  start
+    ● cmp-buffer 0.45ms  nvim-cmp
+    ● cmp-nvim-lsp 0.03ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
+    ● cmp-path 0.35ms  nvim-cmp
+    ● cmp-rg 0.39ms  nvim-cmp
+    ● cmp_luasnip 3.85ms  nvim-cmp
+    ● conform.nvim 0.82ms  start
+    ● crates.nvim 1.14ms  nvim-cmp
+    ● diagflow.nvim 0.49ms  LspAttach
+    ● dressing.nvim 0.33ms  VeryLazy
+    ● fidget.nvim 8.78ms  nvim-lspconfig
+    ● friendly-snippets 11.61ms  LuaSnip
+    ● lazy.nvim 5.06ms  init.lua
+    ● lsp-inlayhints.nvim 0.27ms  nvim-lspconfig
+    ● lspkind.nvim 0.07ms  nvim-cmp
+    ● lualine.nvim 4.48ms  start
+    ● LuaSnip 12.94ms  nvim-cmp
+    ● mason-lspconfig.nvim 0.13ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 1.05ms  nvim-lspconfig
     ● mason.nvim 0.1ms  nvim-lspconfig
-    ● mini.nvim 2.16ms  start
-    ● neodev.nvim 0.46ms  nvim-lspconfig
-    ● nightfox.nvim 1.57ms  start
-    ● noice.nvim 1.37ms  VeryLazy
-    ● nui.nvim 0.21ms  noice.nvim
-    ● nvim-cmp 19.81ms 󰢱 cmp  obsidian.nvim
-    ● nvim-colorizer.lua 2.02ms  VeryLazy
-    ● nvim-lspconfig 6.89ms  start
-    ● nvim-notify 0.21ms  noice.nvim
-    ● nvim-tree.lua 5.37ms  start
-    ● nvim-treesitter 2.71ms  start
-    ● nvim-web-devicons 0.16ms  nvim-tree.lua
-    ● obsidian.nvim 25.16ms  markdown
-    ● peek.nvim 0.56ms  VeryLazy
-    ● plenary.nvim 0.26ms  obsidian.nvim
-    ● quickfix-reflector.vim 0.16ms  VeryLazy
-    ● vim-just 0.06ms  BufReadPre
-    ● vim-sleuth 0.22ms  start
-    ● vim-tmux-navigator 0.17ms  start
-    ● which-key.nvim 0.47ms  VeryLazy
+    ● mini.nvim 2.58ms  start
+    ● neodev.nvim 0.47ms  nvim-lspconfig
+    ● nightfox.nvim 16.39ms  start
+    ● noice.nvim 1.19ms  VeryLazy
+    ● nui.nvim 0.33ms  noice.nvim
+    ● nvim-cmp 20.32ms 󰢱 cmp  obsidian.nvim
+    ● nvim-colorizer.lua 1ms  VeryLazy
+    ● nvim-lspconfig 15.09ms  start
+    ● nvim-notify 0.26ms  noice.nvim
+    ● nvim-tree.lua 5.77ms 󰢱 nvim-tree.api  fidget.nvim
+    ● nvim-treesitter 2.49ms  start
+    ● nvim-web-devicons 0.19ms  nvim-tree.lua
+    ● obsidian.nvim 27.42ms  markdown
+    ● peek.nvim 0.74ms  VeryLazy
+    ● plenary.nvim 0.27ms  obsidian.nvim
+    ● quickfix-reflector.vim 0.22ms  VeryLazy
+    ● vim-just 0.03ms  BufReadPre
+    ● vim-sleuth 0.24ms  start
+    ● vim-tmux-navigator 0.16ms  start
+    ● which-key.nvim 0.72ms  VeryLazy
 
-  Not Loaded (3)
-    ○ diffview.nvim  <leader>gh  <leader>gd  <leader>gc
+  Not Loaded (4)
+    ○ diffview.nvim  <leader>gc  <leader>gh  <leader>gd
+    ○ fzf-lua  <leader>ff  <leader>fn  <leader>fg  <leader>f/  <leader>fh  <leader>fd  <leader>fw  <leader>fr  <leader><leader>  <leader>f.  <C-P>  ,,
     ○ grapple.nvim  <c-s>  ;
     ○ trouble.nvim  <leader>xx  <leader>xb  <leader>xs  <leader>xl  <leader>xq
 
