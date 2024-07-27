@@ -15,6 +15,12 @@ return {
 
     -- Add support for LSP inlay hints, only till nvim --version < 0.10
     { 'lvimuser/lsp-inlayhints.nvim', opts = {} },
+
+    {
+      'dgagn/diagflow.nvim',
+      event = 'LspAttach',
+      opts = {},
+    },
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
