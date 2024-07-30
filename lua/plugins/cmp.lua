@@ -112,7 +112,9 @@ return {
       formatting = {
         format = require('lspkind').cmp_format {
           mode = 'symbol',
-          max_width = '30',
+          maxwidth = function()
+            return math.floor(0.45 * vim.o.columns)
+          end,
         },
         expandable_indicator = true,
         fields = { 'abbr', 'kind', 'menu' },
@@ -120,6 +122,11 @@ return {
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
+      },
+      view = {
+        docs = {
+          auto_open = false,
+        },
       },
     }
   end,

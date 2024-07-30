@@ -126,12 +126,5 @@ return {
       desc = '[F]ind Recent Files ("." for Repeat)',
       silent = true,
     },
-    -- Code Actions
-    {
-      '<leader>ca',
-      ":lua require('fzf-lua').lsp_code_actions()<CR>",
-      desc = '[C]ode [A]ctions',
-      silent = true,
-    },
   },
 }
