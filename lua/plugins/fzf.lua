@@ -105,10 +105,17 @@ return {
       desc = '[F]ind current [W]ord',
       silent = true,
     },
-    -- Search Resume
+    -- Resume with fr
     {
       '<leader>fr',
-      ":lua require('fzf-lua').live_grep_resume({multiprocess = true})<CR>",
+      ":lua require('fzf-lua').resume()<CR>",
+      desc = '[F]ind [R]esume',
+      silent = true,
+    },
+    -- Resume with ,r
+    {
+      ',r',
+      ":lua require('fzf-lua').resume()<CR>",
       desc = '[F]ind [R]esume',
       silent = true,
     },
@@ -117,6 +124,13 @@ return {
       '<leader>f.',
       ":lua require('fzf-lua').oldfiles()<CR>",
       desc = '[F]ind Recent Files ("." for Repeat)',
+      silent = true,
+    },
+    -- Code Actions
+    {
+      '<leader>ca',
+      ":lua require('fzf-lua').lsp_code_actions()<CR>",
+      desc = '[C]ode [A]ctions',
       silent = true,
     },
   },

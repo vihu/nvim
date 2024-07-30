@@ -73,7 +73,7 @@ return {
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
-        nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+        -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
         -- Opens a popup that displays documentation about the word under your cursor
         --  See `:help K` for why this keymap.
