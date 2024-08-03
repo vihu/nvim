@@ -26,6 +26,7 @@ return {
       sql = { 'sql_formatter' },
       python = { 'isort', 'black' },
       sh = { 'shfmt' },
+      proto = { 'buf' },
     },
   },
 }

@@ -4,7 +4,60 @@ local function command_exists(cmd)
 end
 
 -- Determine the appropriate command based on the availability of fdfind or fd
-local find_cmd = command_exists 'fdfind' and 'fdfind' or 'fd'
+local fd_cmd = command_exists 'fdfind' and 'fdfind' or 'fd'
+
+-- Function to switch projects
+local function project_switcher(project_dirs)
+  local find_command = fd_cmd .. ' -t d -d 1 -x basename'
+
+  local function get_projects(dirs)
+    local projects = {}
+    for _, projects_dir in ipairs(dirs) do
+      local expanded_dir = vim.fn.expand(projects_dir)
+      local command = string.format('cd %s && %s', vim.fn.shellescape(expanded_dir), find_command)
+      local output = vim.fn.system(command)
+      if vim.v.shell_error == 0 then
+        for project in output:gmatch '[^\r\n]+' do
+          local full_path = vim.fn.fnamemodify(expanded_dir .. '/' .. project, ':p')
+          table.insert(projects, { name = project, path = full_path })
+        end
+      else
+        print('Error executing command in ' .. expanded_dir)
+      end
+    end
+    return projects
+  end
+
+  local projects = get_projects(project_dirs)
+
+  require('fzf-lua').fzf_exec(
+    vim.tbl_map(function(proj)
+      return proj.name
+    end, projects),
+    {
+      prompt = 'Project: ',
+      actions = {
+        ['default'] = function(selected)
+          local project_name = selected[1]
+          local project_path = vim.tbl_filter(function(proj)
+            return proj.name == project_name
+          end, projects)[1].path
+          vim.cmd('cd ' .. vim.fn.fnameescape(project_path))
+          print('Switched to project: ' .. project_name)
+          vim.schedule(function()
+            local nvim_tree = require 'nvim-tree'
+            if nvim_tree then
+              require('nvim-tree.api').tree.close()
+              require('nvim-tree.api').tree.change_root(project_path)
+            else
+              print 'NvimTree is not available'
+            end
+          end)
+        end,
+      },
+    }
+  )
+end
 
 return {
   'ibhagwan/fzf-lua',
@@ -39,13 +92,13 @@ return {
     -- Use ctrl-p for finding files
     {
       '<C-P>',
-      ":lua require('fzf-lua').files({ cmd = '" .. find_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
+      ":lua require('fzf-lua').files({ cmd = '" .. fd_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
       desc = '[F]ind [F]iles',
       silent = true,
     },
     {
       '<leader>ff',
-      ":lua require('fzf-lua').files({ cmd = '" .. find_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
+      ":lua require('fzf-lua').files({ cmd = '" .. fd_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
       desc = '[F]ind [F]iles',
       silent = true,
     },
@@ -124,6 +177,15 @@ return {
       '<leader>f.',
       ":lua require('fzf-lua').oldfiles()<CR>",
       desc = '[F]ind Recent Files ("." for Repeat)',
+      silent = true,
+    },
+    -- Projects
+    {
+      '<leader>fp',
+      function()
+        project_switcher { '~/work', '~/personal' }
+      end,
+      desc = '[F]ind [P]rojects',
       silent = true,
     },
   },
