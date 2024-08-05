@@ -49,6 +49,7 @@ local function project_switcher(project_dirs)
             if nvim_tree then
               require('nvim-tree.api').tree.close()
               require('nvim-tree.api').tree.change_root(project_path)
+              require('nvim-tree.api').tree.toggle()
             else
               print 'NvimTree is not available'
             end
@@ -186,6 +187,13 @@ return {
         project_switcher { '~/work', '~/personal' }
       end,
       desc = '[F]ind [P]rojects',
+      silent = true,
+    },
+    -- Search git branches
+    {
+      '<leader>fb',
+      ":lua require('fzf-lua').git_branches()<CR>",
+      desc = '[F]ind [B]ranch',
       silent = true,
     },
   },
