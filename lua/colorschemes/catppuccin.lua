@@ -1,7 +1,7 @@
 return {
   'catppuccin/nvim',
   lazy = false,
-  enabled = false,
+  enabled = true,
   priority = 1000,
   name = 'catppuccin',
   config = function()
@@ -38,12 +38,16 @@ return {
       integrations = {
         barbar = true,
         cmp = true,
-        mini = true,
+        diffview = true,
+        fidget = true,
+        flash = true,
+        lsp_trouble = true,
         mason = true,
         markdown = true,
-        notify = true,
-        noice = true,
-        nvimtree = true,
+        mini = {
+          enabled = true,
+          indentscope_color = '',
+        },
         native_lsp = {
           enabled = true,
           virtual_text = {
@@ -62,10 +66,17 @@ return {
             background = true,
           },
         },
+        notify = true,
+        noice = true,
+        nvimtree = true,
         treesitter = true,
-        fidget = true,
         which_key = true,
       },
+      custom_highlights = function(colors)
+        return {
+          NvimTreeNormalNC = { bg = colors.mantle },
+        }
+      end,
     }
 
     vim.o.background = 'dark'

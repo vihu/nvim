@@ -2,13 +2,14 @@ return {
   'vihu/gruvbox.nvim',
   priority = 1000,
   lazy = false,
-  enabled = true,
+  cond = false,
+  enabled = false,
   config = function()
     require('gruvbox').setup {
       terminal_colors = true,
       undercurl = false,
       underline = false,
-      bold = true,
+      bold = false,
       italic = {
         strings = false,
         emphasis = false,
@@ -21,7 +22,7 @@ return {
       invert_signs = false,
       invert_tabline = false,
       invert_intend_guides = false,
-      inverse = true,
+      inverse = false,
       contrast = 'hard',
       palette_overrides = {},
       overrides = {},
