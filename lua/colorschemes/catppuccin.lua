@@ -41,6 +41,7 @@ return {
         diffview = true,
         fidget = true,
         flash = true,
+        fzf = true,
         lsp_trouble = true,
         mason = true,
         markdown = true,
