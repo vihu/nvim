@@ -9,7 +9,8 @@ return {
     },
     spec = {
       { '<leader>f', group = '[F]ind' },
-      { '<leader>x', group = '[T]rouble' },
+      { '<leader>x', group = '[X]ecute' },
+      { '<leader>t', group = '[T]erminal' },
       { '<leader>o', group = '[O]bsidian' },
       { '<leader>g', group = '[G]it' },
       { '<leader>b', group = '[B]uffer' },

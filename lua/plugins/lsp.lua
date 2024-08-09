@@ -16,10 +16,14 @@ return {
     -- Add support for LSP inlay hints, only till nvim --version < 0.10
     { 'lvimuser/lsp-inlayhints.nvim', opts = {} },
 
+    -- Inline diagnostic messages
     {
-      'dgagn/diagflow.nvim',
-      event = 'LspAttach',
-      opts = {},
+      'rachartier/tiny-inline-diagnostic.nvim',
+      event = 'VeryLazy',
+      config = function()
+        vim.diagnostic.config { virtual_text = false }
+        require('tiny-inline-diagnostic').setup()
+      end,
     },
   },
   config = function()
@@ -69,7 +73,7 @@ return {
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
-        nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        nmap('<leader>cn', vim.lsp.buf.rename, '[C]ode [R]ename')
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.

@@ -38,6 +38,7 @@ return {
       integrations = {
         barbar = true,
         cmp = true,
+        dadbod_ui = true,
         diffview = true,
         fidget = true,
         flash = true,
