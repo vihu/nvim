@@ -1,9 +1,7 @@
 return {
   'echasnovski/mini.nvim',
   config = function()
-    local nmap = function(keys, func, desc)
-      vim.keymap.set('n', keys, func, desc)
-    end
+    local set = vim.keymap.set
 
     -- Better Around/Inside textobjects
     --
@@ -28,7 +26,7 @@ return {
     require('mini.trailspace').setup {
       only_in_normal_buffers = true,
     }
-    nmap('<leader>tw', ':lua MiniTrailspace.trim()<CR>', { desc = '[T]railing [W]hitespace' })
+    set('n', '<leader>tw', ':lua MiniTrailspace.trim()<CR>', { desc = '[T]railing [W]hitespace' })
 
     -- Comment support
     require('mini.comment').setup {
@@ -41,8 +39,8 @@ return {
 
     -- Buffer remove
     require('mini.bufremove').setup()
-    nmap('<leader>bd', ':lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
-    nmap(',bd', ':lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
+    set('n', '<leader>bd', ':lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
+    set('n', ',bd', ':lua MiniBufremove.delete()<CR>', { desc = '[B]uffer [D]elete' })
 
     -- Git diff support
     require('mini.diff').setup {
@@ -55,7 +53,7 @@ return {
         },
       },
     }
-    nmap('<leader>go', function()
+    set('n', '<leader>go', function()
       require('mini.diff').toggle_overlay(0)
     end, { desc = '[G]it [O]verlay' })
 
