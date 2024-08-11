@@ -48,59 +48,65 @@ Ignore warnings but make sure the following work:
 Output of `:Lazy show`:
 
 ```bash
-  Total: 48 plugins
+  Total: 54 plugins
 
-  Loaded (40)
-    ● barbar.nvim 1.55ms  start
-    ● cmp-buffer 0.45ms  nvim-cmp
-    ● cmp-nvim-lsp 0.03ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
-    ● cmp-path 0.35ms  nvim-cmp
-    ● cmp-rg 0.39ms  nvim-cmp
-    ● cmp_luasnip 3.85ms  nvim-cmp
-    ● conform.nvim 0.82ms  start
-    ● crates.nvim 1.14ms  nvim-cmp
-    ● diagflow.nvim 0.49ms  LspAttach
-    ● dressing.nvim 0.33ms  VeryLazy
-    ● fidget.nvim 8.78ms  nvim-lspconfig
-    ● friendly-snippets 11.61ms  LuaSnip
-    ● lazy.nvim 5.06ms  init.lua
-    ● lsp-inlayhints.nvim 0.27ms  nvim-lspconfig
-    ● lspkind.nvim 0.07ms  nvim-cmp
-    ● lualine.nvim 4.48ms  start
-    ● LuaSnip 12.94ms  nvim-cmp
-    ● mason-lspconfig.nvim 0.13ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 1.05ms  nvim-lspconfig
-    ● mason.nvim 0.1ms  nvim-lspconfig
-    ● mini.nvim 2.58ms  start
-    ● neodev.nvim 0.47ms  nvim-lspconfig
-    ● nightfox.nvim 16.39ms  start
-    ● noice.nvim 1.19ms  VeryLazy
-    ● nui.nvim 0.33ms  noice.nvim
-    ● nvim-cmp 20.32ms 󰢱 cmp  obsidian.nvim
-    ● nvim-colorizer.lua 1ms  VeryLazy
-    ● nvim-lspconfig 15.09ms  start
-    ● nvim-notify 0.26ms  noice.nvim
-    ● nvim-tree.lua 5.77ms 󰢱 nvim-tree.api  fidget.nvim
-    ● nvim-treesitter 2.49ms  start
-    ● nvim-web-devicons 0.19ms  nvim-tree.lua
-    ● obsidian.nvim 27.42ms  markdown
-    ● peek.nvim 0.74ms  VeryLazy
-    ● plenary.nvim 0.27ms  obsidian.nvim
-    ● quickfix-reflector.vim 0.22ms  VeryLazy
-    ● vim-just 0.03ms  BufReadPre
-    ● vim-sleuth 0.24ms  start
-    ● vim-tmux-navigator 0.16ms  start
-    ● which-key.nvim 0.72ms  VeryLazy
+  Loaded (44)
+    ● barbar.nvim 4.52ms  start
+    ● catppuccin 2.41ms  start
+    ● cmp-buffer 0.51ms  nvim-cmp
+    ● cmp-nvim-lsp 0.06ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
+    ● cmp-path 0.43ms  nvim-cmp
+    ● cmp-rg 0.5ms  nvim-cmp
+    ● cmp_luasnip 1.97ms  nvim-cmp
+    ● conform.nvim 0.3ms  start
+    ● crates.nvim 1.92ms  nvim-cmp
+    ● dressing.nvim 0.48ms  VeryLazy
+    ● fidget.nvim 6.63ms  nvim-lspconfig
+    ● flash.nvim 0.92ms  VeryLazy
+    ● friendly-snippets 7.83ms  LuaSnip
+    ● lazy.nvim 5.27ms  init.lua
+    ● lsp-inlayhints.nvim 0.4ms  nvim-lspconfig
+    ● lspkind.nvim 0.04ms  nvim-cmp
+    ● lualine.nvim 3.47ms  start
+    ● LuaSnip 8.36ms  nvim-cmp
+    ● mason-lspconfig.nvim 0.09ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 0.92ms  nvim-lspconfig
+    ● mason.nvim 0.14ms  nvim-lspconfig
+    ● mini.nvim 2.28ms  start
+    ● neodev.nvim 0.54ms  nvim-lspconfig
+    ● noice.nvim 1.27ms  VeryLazy
+    ● nui.nvim 0.25ms  noice.nvim
+    ● nvim-cmp 15.15ms 󰢱 cmp  vim-dadbod-completion
+    ● nvim-colorizer.lua 1.28ms  VeryLazy
+    ● nvim-lspconfig 16.4ms  start
+    ● nvim-notify 0.25ms  noice.nvim
+    ● nvim-tree.lua 2.86ms 󰢱 nvim-tree.api  fidget.nvim
+    ● nvim-treesitter 2.53ms  start
+    ● nvim-web-devicons 0.16ms  barbar.nvim
+    ● peek.nvim 0.58ms  VeryLazy
+    ● quicker.nvim 0.38ms  start
+    ● SmoothCursor.nvim 0.51ms  start
+    ● terminal.nvim 0.42ms  start
+    ● tiny-inline-diagnostic.nvim 2.25ms  nvim-lspconfig
+    ● vim-dadbod 0.28ms  vim-dadbod-ui
+    ● vim-dadbod-completion 15.93ms  vim-dadbod-ui
+    ● vim-dadbod-ui 16.47ms  VeryLazy
+    ● vim-just 0.09ms  BufReadPre
+    ● vim-sleuth 0.31ms  start
+    ● vim-tmux-navigator 0.12ms  start
+    ● which-key.nvim 0.53ms  VeryLazy
 
-  Not Loaded (4)
-    ○ diffview.nvim  <leader>gc  <leader>gh  <leader>gd
-    ○ fzf-lua  <leader>ff  <leader>fn  <leader>fg  <leader>f/  <leader>fh  <leader>fd  <leader>fw  <leader>fr  <leader><leader>  <leader>f.  <C-P>  ,,
-    ○ grapple.nvim  <c-s>  ;
-    ○ trouble.nvim  <leader>xx  <leader>xb  <leader>xs  <leader>xl  <leader>xq
+  Not Loaded (5)
+    ○ diffview.nvim  <leader>gd  <leader>gc  <leader>gh
+    ○ fzf-lua  <leader>f.  <leader>fp  <leader>fb  <leader>fd  ,,  <leader><leader>  ,r  <leader>ff  <leader>fn  <leader>fg  <leader>f/  <leader>fh  <C-P>  <leader>fw  <leader>fr
+    ○ grapple.nvim  ;  <c-s>
+    ○ plenary.nvim  diffview.nvim
+    ○ trouble.nvim  <leader>xq  <leader>xx  <leader>xb  <leader>xs  <leader>xl
 
-  Disabled (4)
+  Disabled (5)
     ○ bamboo.nvim
-    ○ catppuccin
+    ○ gruvbox.nvim
     ○ kanagawa.nvim
     ○ modus-themes.nvim
+    ○ nightfox.nvim
 ```
