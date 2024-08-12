@@ -3,6 +3,36 @@ return {
   config = function()
     local set = vim.keymap.set
 
+    -- Git support (primarily for mini.statusline)
+    require('mini.git').setup {}
+
+    -- Remove buffers
+    require('mini.bufremove').setup {}
+
+    -- Tabline
+    require('mini.tabline').setup {}
+
+    -- Statusline
+    require('mini.statusline').setup {}
+
+    -- Close all buffers except the current one
+    set('n', '<leader>bx', function()
+      local current = vim.fn.bufnr()
+      for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+        if bufnr ~= current and vim.fn.buflisted(bufnr) == 1 then
+          require('mini.bufremove').delete(bufnr, false)
+        end
+      end
+    end, { desc = '[B]uffer e[X]it others', silent = true })
+
+    set('n', ',bx', '<leader>bx', { remap = true, desc = '[B]uffer e[X]it others', silent = true })
+
+    -- Navigate to previous buffer
+    set('n', ',a', '<cmd>bprevious<CR>', { desc = 'Buffer previous', silent = true })
+
+    -- Navigate to next buffer
+    set('n', ',s', '<cmd>bnext<CR>', { desc = 'Buffer next', silent = true })
+
     -- Better Around/Inside textobjects
     --
     -- Examples:

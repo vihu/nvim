@@ -38,7 +38,6 @@ return {
       integrations = {
         barbar = true,
         cmp = true,
-        dadbod_ui = true,
         diffview = true,
         fidget = true,
         flash = true,
@@ -47,7 +46,7 @@ return {
         mason = true,
         markdown = true,
         mini = {
-          enabled = true,
+          enabled = false,
           indentscope_color = '',
         },
         native_lsp = {

@@ -14,6 +14,8 @@ return {
       { '<leader>o', group = '[O]bsidian' },
       { '<leader>g', group = '[G]it' },
       { '<leader>b', group = '[B]uffer' },
+      { '<leader>c', group = '[C]ode' },
+      { '<leader>w', group = '[W]orkspace' },
     },
   },
 }
