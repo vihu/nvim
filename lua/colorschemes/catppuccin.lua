@@ -76,7 +76,7 @@ return {
       custom_highlights = function(colors)
         return {
           NvimTreeNormalNC = { bg = colors.mantle },
-          MiniTablineCurrent = { fg = colors.flamingo, bg = colors.surface1, sp = colors.red },
+          MiniTablineCurrent = { fg = colors.flamingo, bg = colors.mantle, sp = colors.red },
         }
       end,
     }
