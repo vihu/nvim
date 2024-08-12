@@ -1,12 +1,24 @@
 # nvim
 
-- Uses [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) as the initial template
-- Separates out plugins to separate files
-- Adds some extra plugins which I personally use (obsidian, noice etc.)
+- Uses [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) as the initial template.
+- Separates out plugins to separate files.
+- Adds some more plugins which I like.
+- Lots of [mini.nvim](https://github.com/echasnovski/mini.nvim) plugins!
 
 ## Requirements
 
-- Install nodejs, recommended: [mise](https://github.com/jdx/mise)
+- [ripgrep](https://github.com/BurntSushi/ripgrep), fast searching: `$ cargo install ripgrep`.
+
+- [fzf](https://github.com/junegunn/fzf), fast fuzzy file finding:
+
+```bash
+$ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+$ ~/.fzf/install
+```
+
+- A nerd font (for icons etc), you can pick one [here](https://www.nerdfonts.com/font-downloads).
+
+- Install nodejs, recommended installer: [mise](https://github.com/jdx/mise).
 
 - Setup nodejs for neovim:
 
@@ -15,7 +27,7 @@
   $ npm install -g neovim
   ```
 
-- Install python3, recommended: [pyenv](https://github.com/pyenv/pyenv).
+- Install python3, recommended installer: [pyenv](https://github.com/pyenv/pyenv).
 
 - Setup python for neovim:
 
@@ -28,11 +40,7 @@
   $ pip install --upgrade pip && pip install pynvim
   ```
 
-- Setup deno
-
-  ```bash
-  $ cargo install deno --locked
-  ```
+- Setup deno: `$ cargo install deno --locked`
 
 ## Checkhealth
 
