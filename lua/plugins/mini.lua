@@ -3,6 +3,10 @@ return {
   config = function()
     local set = vim.keymap.set
 
+    -- Edit files
+    require('mini.files').setup {}
+    set('n', '-', ':lua MiniFiles.open()<CR>', { desc = '[-] Show files' })
+
     -- Git support (primarily for mini.statusline)
     require('mini.git').setup {}
 
