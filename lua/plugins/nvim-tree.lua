@@ -3,7 +3,6 @@ return {
   version = '*',
   lazy = false,
   keys = {
-    { '<leader>ft', ':NvimTreeToggle<CR>', desc = '[F]iletree [T]oggle', silent = true },
     { ',e', ':NvimTreeToggle<CR>', desc = '[E]xplorer', silent = true },
   },
   dependencies = {

@@ -117,6 +117,7 @@ return {
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {
+      svelte = {},
       tsserver = {},
       gopls = {},
       pylsp = {
@@ -170,6 +171,7 @@ return {
       'shfmt',
       'sql-formatter',
       'zls',
+      'svelte-language-server',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

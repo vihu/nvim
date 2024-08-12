@@ -46,7 +46,7 @@ return {
         mason = true,
         markdown = true,
         mini = {
-          enabled = false,
+          enabled = true,
           indentscope_color = '',
         },
         native_lsp = {
@@ -76,6 +76,7 @@ return {
       custom_highlights = function(colors)
         return {
           NvimTreeNormalNC = { bg = colors.mantle },
+          MiniTablineCurrent = { fg = colors.flamingo, bg = colors.surface1, sp = colors.red },
         }
       end,
     }
