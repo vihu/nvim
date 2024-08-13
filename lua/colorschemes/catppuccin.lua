@@ -12,7 +12,7 @@ return {
       },
       term_colors = true,
       no_italic = true,
-      no_underline = true,
+      no_underline = false,
       no_bold = true,
       styles = {
         comments = {},
@@ -76,7 +76,7 @@ return {
       custom_highlights = function(colors)
         return {
           NvimTreeNormalNC = { bg = colors.mantle },
-          MiniTablineCurrent = { fg = colors.flamingo, bg = colors.mantle, sp = colors.red },
+          MiniTablineCurrent = { fg = colors.flamingo, bg = colors.mantle, sp = colors.red, style = {} },
         }
       end,
     }

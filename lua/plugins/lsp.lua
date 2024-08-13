@@ -16,13 +16,18 @@ return {
     -- Add support for LSP inlay hints, only till nvim --version < 0.10
     { 'lvimuser/lsp-inlayhints.nvim', opts = {} },
 
-    -- Inline diagnostic messages
+    -- Diagnostics in the top-right corner (helix style)
     {
-      'rachartier/tiny-inline-diagnostic.nvim',
+      'RaafatTurki/corn.nvim',
       event = 'VeryLazy',
       config = function()
         vim.diagnostic.config { virtual_text = false }
-        require('tiny-inline-diagnostic').setup()
+        require('corn').setup {
+          border_style = 'rounded',
+          item_preprocess_func = function(item)
+            return item
+          end,
+        }
       end,
     },
   },
