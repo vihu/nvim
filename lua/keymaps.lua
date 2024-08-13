@@ -44,3 +44,6 @@ set('v', 'J', ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = 'Move 
 set('v', 'K', ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = 'Move selected line up' })
 -- Prevent cursor from jumping back
 set('v', 'y', 'ygv<esc>', { noremap = true, silent = true, desc = 'Stop cursor from jumping back in visual mode' })
+
+-- Clear highlight on pressing <Esc> in normal mode
+set('n', '<Esc>', '<cmd>nohlsearch<CR>')
