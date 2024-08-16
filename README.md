@@ -11,14 +11,21 @@
 
 - [fzf](https://github.com/junegunn/fzf), fast fuzzy file finding:
 
-```bash
-$ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-$ ~/.fzf/install
-```
+  ```bash
+  $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  $ ~/.fzf/install
+  ```
+
+- [mise](https://github.com/jdx/mise), for language installation.
 
 - A nerd font (for icons etc), you can pick one [here](https://www.nerdfonts.com/font-downloads).
 
-- Install nodejs, recommended installer: [mise](https://github.com/jdx/mise).
+- Install nodejs, recommended installer:
+
+  ```bash
+  mise install node
+  mise use node
+  ```
 
 - Setup nodejs for neovim:
 
@@ -40,7 +47,12 @@ $ ~/.fzf/install
   $ pip install --upgrade pip && pip install pynvim
   ```
 
-- Setup deno: `$ cargo install deno --locked`
+- Setup deno:
+
+  ```bash
+  mise install deno
+  mise use deno
+  ```
 
 ## Checkhealth
 
