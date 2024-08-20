@@ -70,47 +70,47 @@ Output of `:Lazy show`:
 ```bash
   Total: 40 plugins
 
-  Loaded (28)
-    ● catppuccin 2.11ms  start
-    ● cmp-nvim-lsp 0.02ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
-    ● conform.nvim 0.35ms  start
-    ● corn.nvim 0.46ms  nvim-lspconfig
-    ● fidget.nvim 1.89ms  nvim-lspconfig
-    ● flash.nvim 0.68ms  VeryLazy
-    ● fzf-lua 5.44ms  <C-P>
-    ● lazy.nvim 4.24ms  init.lua
-    ● lsp-inlayhints.nvim 0.32ms  nvim-lspconfig
-    ● mason-lspconfig.nvim 0.14ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 0.9ms  nvim-lspconfig
-    ● mason.nvim 0.1ms  nvim-lspconfig
-    ● mini.nvim 3.13ms  start
-    ● neodev.nvim 0.38ms  nvim-lspconfig
-    ● noice.nvim 0.93ms  VeryLazy
-    ● nui.nvim 0.21ms  noice.nvim
-    ● nvim-colorizer.lua 0.68ms  VeryLazy
-    ● nvim-lspconfig 8.69ms  start
-    ● nvim-notify 0.18ms  noice.nvim
-    ● nvim-tree.lua 5.55ms  start
-    ● nvim-treesitter 2.75ms  start
-    ● nvim-web-devicons 0.12ms  nvim-tree.lua
-    ● peek.nvim 0.44ms  VeryLazy
-    ● quicker.nvim 0.32ms  start
-    ● vim-just 0.04ms  BufReadPre
-    ● vim-sleuth 0.23ms  start
-    ● vim-tmux-navigator 0.17ms  start
-    ● which-key.nvim 0.59ms  VeryLazy
+  Loaded (26)
+    ● catppuccin 2.09ms  start
+    ● cmp-nvim-lsp 0.03ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
+    ● conform.nvim 0.31ms  start
+    ● corn.nvim 0.32ms  nvim-lspconfig
+    ● fidget.nvim 2.56ms  nvim-lspconfig
+    ● flash.nvim 0.91ms  VeryLazy
+    ● lazy.nvim 4.38ms  init.lua
+    ● lsp-inlayhints.nvim 0.24ms  nvim-lspconfig
+    ● mason-lspconfig.nvim 0.07ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 1.15ms  nvim-lspconfig
+    ● mason.nvim 0.08ms  nvim-lspconfig
+    ● mini.nvim 1.97ms  start
+    ● neodev.nvim 0.37ms  nvim-lspconfig
+    ● no-neck-pain.nvim 0.84ms  start
+    ● noice.nvim 0.8ms  VeryLazy
+    ● nui.nvim 0.14ms  noice.nvim
+    ● nvim-colorizer.lua 0.7ms  VeryLazy
+    ● nvim-lspconfig 9.97ms  start
+    ● nvim-notify 0.17ms  noice.nvim
+    ● nvim-treesitter 2.87ms  start
+    ● peek.nvim 0.4ms  VeryLazy
+    ● quicker.nvim 0.33ms  start
+    ● vim-just 0.03ms  BufReadPre
+    ● vim-sleuth 0.22ms  start
+    ● vim-tmux-navigator 0.09ms  start
+    ● which-key.nvim 0.36ms  VeryLazy
 
-  Not Loaded (12)
+  Not Loaded (14)
     ○ cmp-buffer  nvim-cmp
     ○ cmp-path  nvim-cmp
     ○ cmp-rg  nvim-cmp
     ○ cmp_luasnip  nvim-cmp
-    ○ crates.nvim  rust  toml  nvim-cmp
+    ○ crates.nvim  toml  rust  nvim-cmp
     ○ diffview.nvim  <leader>gh  <leader>gd  <leader>gc
     ○ friendly-snippets  LuaSnip
+    ○ fzf-lua  ,,  <leader>fp  <leader>ff  <leader><leader>  <leader>fg  <leader>f/  <leader>fh  <leader>fd  <leader>fw  <leader>fr  <leader>f.  <C-P>  <leader>fb  ,r  <leader>fn
     ○ lspkind.nvim  nvim-cmp
     ○ LuaSnip  nvim-cmp
+    ○ mini.icons  fzf-lua
     ○ nvim-cmp  InsertEnter
     ○ plenary.nvim  diffview.nvim
-    ○ trouble.nvim  <leader>xx  <leader>xb  <leader>xs  <leader>xl  <leader>xq
+    ○ trouble.nvim  <leader>xl  <leader>xq  <leader>xx  <leader>xb  <leader>xs
 ```

@@ -43,17 +43,7 @@ local function project_switcher(project_dirs)
             return proj.name == project_name
           end, projects)[1].path
           vim.cmd('cd ' .. vim.fn.fnameescape(project_path))
-          print('Switched to project: ' .. project_name)
-          vim.schedule(function()
-            local nvim_tree = require 'nvim-tree'
-            if nvim_tree then
-              require('nvim-tree.api').tree.close()
-              require('nvim-tree.api').tree.change_root(project_path)
-              require('nvim-tree.api').tree.toggle()
-            else
-              print 'NvimTree is not available'
-            end
-          end)
+          print('Switched to project: ' .. project_name .. ' (' .. project_path .. ')')
         end,
       },
     }
@@ -62,7 +52,7 @@ end
 
 return {
   'ibhagwan/fzf-lua',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  dependencies = { 'echasnovski/mini.icons' },
   config = function()
     require('fzf-lua').setup {
       files = {
