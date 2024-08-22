@@ -1,8 +1,8 @@
 -- NOTE: the order of imports is important
-require 'globals'
-require 'opts'
-require 'keymaps'
-require 'autocmds'
+require 'config.globals'
+require 'config.opts'
+require 'config.keymaps'
+require 'config.autocmds'
 
 -- NOTE: Install `lazy.nvim` plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

@@ -1,116 +1,87 @@
-# nvim
+# Neovim Configuration
 
-- Uses [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) as the initial template.
-- Separates out plugins to separate files.
-- Adds some more plugins which I like.
-- Lots of [mini.nvim](https://github.com/echasnovski/mini.nvim) plugins!
+This configuration is based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) and includes additional customizations.
 
-## Requirements
+## Features
 
-- [ripgrep](https://github.com/BurntSushi/ripgrep), fast searching: `$ cargo install ripgrep`.
+- Modular plugin management (plugins separated into individual files)
+- Custom autocmds, options, globals, and keymaps
+- Extra plugins for IDE like functionality
 
-- [fzf](https://github.com/junegunn/fzf), fast fuzzy file finding:
+## Prerequisites
 
-  ```bash
-  $ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  $ ~/.fzf/install
-  ```
+- [Neovim](https://neovim.io/) (latest stable)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) for fast searching
+- [fzf](https://github.com/junegunn/fzf) for fuzzy file finding
+- [mise](https://github.com/jdx/mise) for language version management
+- [pyenv](https://github.com/pyenv/pyenv) for python management
+- [Nerd Font](https://www.nerdfonts.com/font-downloads) for icons and glyphs
 
-- [mise](https://github.com/jdx/mise), for language installation.
+## Installation
 
-- A nerd font (for icons etc), you can pick one [here](https://www.nerdfonts.com/font-downloads).
+1. Clone this repository to your Neovim configuration directory:
 
-- Install nodejs, recommended installer:
+2. Install the required dependencies:
+
+- Node.js:
 
   ```bash
   mise install node
   mise use node
+  npm install -g yarn neovim
   ```
 
-- Setup nodejs for neovim:
+- Python:
 
   ```bash
-  $ npm install -g yarn
-  $ npm install -g neovim
+  pyenv install 3.10.6
+  mkdir -p ~/.config/pynvim && cd ~/.config/pynvim
+  pyenv local 3.10.6
+  python3 -m venv .venv
+  source .venv/bin/activate
+  pip install --upgrade pip pynvim
   ```
 
-- Install python3, recommended installer: [pyenv](https://github.com/pyenv/pyenv).
-
-- Setup python for neovim:
-
-  ```bash
-  $ mkdir -p ~/.config/pynvim
-  $ cd ~/.config/pynvim
-  $ pyenv local 3.10.6
-  $ python3 -m venv .venv
-  $ source .venv/bin/activate
-  $ pip install --upgrade pip && pip install pynvim
-  ```
-
-- Setup deno:
-
+- Deno:
   ```bash
   mise install deno
   mise use deno
   ```
 
-## Checkhealth
+3. Launch Neovim and let it install the plugins automatically.
 
-Ignore warnings but make sure the following work:
+## Health Check
+
+Run `:checkhealth` in Neovim and ensure the following are working correctly:
 
 - clipboard
 - git
 - python support
 - nodejs support
 
-## Output
+## Plugin List
 
-Output of `:Lazy show`:
+This configuration includes 18 plugins (excluding dependencies).
+Including the usual ones:
 
-```bash
-  Total: 40 plugins
+- nvim-lspconfig: Language Server Protocol support
+- nvim-treesitter: Syntax highlighting and code parsing
+- nvim-cmp: Autocompletion
+- mason: LSP package manager
+- fzf-lua: Fuzzy finder
+- conform: Code formatter
+- catppuccin: Color scheme
 
-  Loaded (26)
-    ● catppuccin 2.09ms  start
-    ● cmp-nvim-lsp 0.03ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
-    ● conform.nvim 0.31ms  start
-    ● corn.nvim 0.32ms  nvim-lspconfig
-    ● fidget.nvim 2.56ms  nvim-lspconfig
-    ● flash.nvim 0.91ms  VeryLazy
-    ● lazy.nvim 4.38ms  init.lua
-    ● lsp-inlayhints.nvim 0.24ms  nvim-lspconfig
-    ● mason-lspconfig.nvim 0.07ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 1.15ms  nvim-lspconfig
-    ● mason.nvim 0.08ms  nvim-lspconfig
-    ● mini.nvim 1.97ms  start
-    ● neodev.nvim 0.37ms  nvim-lspconfig
-    ● no-neck-pain.nvim 0.84ms  start
-    ● noice.nvim 0.8ms  VeryLazy
-    ● nui.nvim 0.14ms  noice.nvim
-    ● nvim-colorizer.lua 0.7ms  VeryLazy
-    ● nvim-lspconfig 9.97ms  start
-    ● nvim-notify 0.17ms  noice.nvim
-    ● nvim-treesitter 2.87ms  start
-    ● peek.nvim 0.4ms  VeryLazy
-    ● quicker.nvim 0.33ms  start
-    ● vim-just 0.03ms  BufReadPre
-    ● vim-sleuth 0.22ms  start
-    ● vim-tmux-navigator 0.09ms  start
-    ● which-key.nvim 0.36ms  VeryLazy
+For a full list of plugins and their load status, run `:Lazy show` in Neovim.
 
-  Not Loaded (14)
-    ○ cmp-buffer  nvim-cmp
-    ○ cmp-path  nvim-cmp
-    ○ cmp-rg  nvim-cmp
-    ○ cmp_luasnip  nvim-cmp
-    ○ crates.nvim  toml  rust  nvim-cmp
-    ○ diffview.nvim  <leader>gh  <leader>gd  <leader>gc
-    ○ friendly-snippets  LuaSnip
-    ○ fzf-lua  ,,  <leader>fp  <leader>ff  <leader><leader>  <leader>fg  <leader>f/  <leader>fh  <leader>fd  <leader>fw  <leader>fr  <leader>f.  <C-P>  <leader>fb  ,r  <leader>fn
-    ○ lspkind.nvim  nvim-cmp
-    ○ LuaSnip  nvim-cmp
-    ○ mini.icons  fzf-lua
-    ○ nvim-cmp  InsertEnter
-    ○ plenary.nvim  diffview.nvim
-    ○ trouble.nvim  <leader>xl  <leader>xq  <leader>xx  <leader>xb  <leader>xs
-```
+## Customization
+
+- Add or modify plugins in `lua/plugins/`
+- Adjust config in `lua/config/*.lua`
+
+## Troubleshooting
+
+If you encounter any issues:
+
+1. Ensure all prerequisites are installed
+2. Run `:checkhealth` and address any errors
