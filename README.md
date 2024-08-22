@@ -72,7 +72,55 @@ Including the usual ones:
 - conform: Code formatter
 - catppuccin: Color scheme
 
-For a full list of plugins and their load status, run `:Lazy show` in Neovim.
+Here's a full list using `Lazy show`
+
+```bash
+  Total: 40 plugins
+
+  Loaded (25)
+    ● catppuccin 1.79ms  start
+    ● cmp-nvim-lsp 0.06ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
+    ● conform.nvim 0.39ms  start
+    ● corn.nvim 0.38ms  nvim-lspconfig
+    ● fidget.nvim 2.19ms  nvim-lspconfig
+    ● flash.nvim 0.92ms  VeryLazy
+    ● lazy.nvim 3.94ms  init.lua
+    ● lsp-inlayhints.nvim 0.34ms  nvim-lspconfig
+    ● mason-lspconfig.nvim 0.07ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 0.62ms  nvim-lspconfig
+    ● mason.nvim 0.07ms  nvim-lspconfig
+    ● mini.nvim 3.15ms  start
+    ● neodev.nvim 0.46ms  nvim-lspconfig
+    ● noice.nvim 1.01ms  VeryLazy
+    ● nui.nvim 0.14ms  noice.nvim
+    ● nvim-colorizer.lua 1.14ms  VeryLazy
+    ● nvim-lspconfig 8.94ms  start
+    ● nvim-notify 0.13ms  noice.nvim
+    ● nvim-treesitter 2.56ms  start
+    ● peek.nvim 0.6ms  VeryLazy
+    ● quicker.nvim 0.29ms  start
+    ● vim-just 0.04ms  BufReadPre
+    ● vim-sleuth 0.22ms  start
+    ● vim-tmux-navigator 0.11ms  start
+    ● which-key.nvim 0.43ms  VeryLazy
+
+  Not Loaded (15)
+    ○ cmp-buffer  nvim-cmp
+    ○ cmp-path  nvim-cmp
+    ○ cmp-rg  nvim-cmp
+    ○ cmp_luasnip  nvim-cmp
+    ○ crates.nvim  toml  rust  nvim-cmp
+    ○ diffview.nvim  <leader>gc  <leader>gh  <leader>gd
+    ○ friendly-snippets  LuaSnip
+    ○ fzf-lua  <C-P>  <leader>fr  ,r  <leader>ff  <leader>fn  <leader>fg  <leader>f/  <leader>fh  <leader><leader>  <leader>fw  ,,  <leader>f.  <leader>fp  <leader>fb  <leader>fd
+    ○ lspkind.nvim  nvim-cmp
+    ○ LuaSnip  nvim-cmp
+    ○ mini.icons  fzf-lua
+    ○ no-neck-pain.nvim  <leader>np
+    ○ nvim-cmp  InsertEnter
+    ○ plenary.nvim  diffview.nvim
+    ○ trouble.nvim  <leader>xb  <leader>xs  <leader>xl  <leader>xq  <leader>xx
+```
 
 ## Customization
 
