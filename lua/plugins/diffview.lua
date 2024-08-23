@@ -3,6 +3,7 @@ return {
   dependencies = 'nvim-lua/plenary.nvim',
   lazy = true,
   opts = {
+    use_icons = false,
     view = {
       default = {
         layout = 'diff2_vertical',
