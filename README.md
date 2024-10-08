@@ -66,7 +66,7 @@ Including the usual ones:
 
 - nvim-lspconfig: Language Server Protocol support
 - nvim-treesitter: Syntax highlighting and code parsing
-- nvim-cmp: Autocompletion
+- blink: Autocompletion
 - mason: LSP package manager
 - fzf-lua: Fuzzy finder
 - conform: Code formatter
@@ -75,51 +75,54 @@ Including the usual ones:
 Here's a full list using `Lazy show`
 
 ```bash
-  Total: 40 plugins
+  Total: 32 plugins
 
-  Loaded (25)
-    ● catppuccin 2.95ms  start
-    ● cmp-nvim-lsp 0.04ms 󰢱 cmp_nvim_lsp  nvim-lspconfig
-    ● conform.nvim 0.32ms  start
-    ● corn.nvim 0.45ms  nvim-lspconfig
-    ● fidget.nvim 4.37ms  nvim-lspconfig
-    ● flash.nvim 0.81ms  VeryLazy
-    ● lazy.nvim 6.99ms  init.lua
-    ● lsp-inlayhints.nvim 0.49ms  nvim-lspconfig
-    ● mason-lspconfig.nvim 0.18ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 1.68ms  nvim-lspconfig
-    ● mason.nvim 0.19ms  nvim-lspconfig
-    ● mini.nvim 3.8ms  start
-    ● neodev.nvim 0.68ms  nvim-lspconfig
-    ● noice.nvim 1.12ms  VeryLazy
+  Updated (2)
+    ● corn.nvim 0.32ms  nvim-lspconfig
+        5106eff Fix #13: Check win_is_valid before trying to win_hide (#14) (4 hours ago)
+
+    ● mini.nvim 3.12ms  start
+        a535342 docs(notify): add example of showing notifications in bottom right (8 hours ago)
+        16408bc docs(pairs): clarify that it works only with two character pair (8 hours ago)
+        319361e docs(files): mention not lazy loading to work for directory in arglist (8 hours ago)
+        b2c4c08 feat(hues): add `'lowmedium'` and `'mediumhigh'` saturation levels (8 hours ago)
+        6049d62 ci: test on 0.10.2 instead of 0.10.1 (8 hours ago)
+
+
+  Loaded (24)
+    ● blink.cmp 1.36ms  start
+    ● catppuccin 2.6ms  start
+    ● conform.nvim 0.36ms  start
+    ● fidget.nvim 3.02ms  nvim-lspconfig
+    ● flash.nvim 0.79ms  VeryLazy
+    ● friendly-snippets 0.11ms  blink.cmp
+    ● lazy.nvim 4.02ms  init.lua
+    ● lsp-inlayhints.nvim 0.26ms  nvim-lspconfig
+    ● mason-lspconfig.nvim 0.08ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 0.94ms  nvim-lspconfig
+    ● mason.nvim 0.08ms  nvim-lspconfig
+    ● neodev.nvim 0.47ms  nvim-lspconfig
+    ● noice.nvim 0.86ms  VeryLazy
     ● nui.nvim 0.17ms  noice.nvim
-    ● nvim-colorizer.lua 1.02ms  VeryLazy
-    ● nvim-lspconfig 12.48ms  start
-    ● nvim-notify 0.14ms  noice.nvim
-    ● nvim-treesitter 3.36ms  start
-    ● peek.nvim 0.49ms  VeryLazy
-    ● quicker.nvim 0.56ms  start
-    ● vim-just 0.03ms  BufReadPre
-    ● vim-sleuth 0.37ms  start
-    ● vim-tmux-navigator 0.13ms  start
-    ● which-key.nvim 0.57ms  VeryLazy
+    ● nvim-colorizer.lua 0.79ms  VeryLazy
+    ● nvim-lspconfig 8.73ms  start
+    ● nvim-notify 0.17ms  noice.nvim
+    ● nvim-treesitter 4.08ms  start
+    ● peek.nvim 0.44ms  VeryLazy
+    ● quicker.nvim 0.24ms  start
+    ● vim-just 0.05ms  BufReadPre
+    ● vim-sleuth 0.56ms  start
+    ● vim-tmux-navigator 0.22ms  start
+    ● which-key.nvim 0.54ms  VeryLazy
 
-  Not Loaded (15)
-    ○ cmp-buffer  nvim-cmp 
-    ○ cmp-path  nvim-cmp 
-    ○ cmp-rg  nvim-cmp 
-    ○ cmp_luasnip  nvim-cmp 
-    ○ crates.nvim  rust  toml  nvim-cmp 
-    ○ diffview.nvim  <leader>gc  <leader>gh  <leader>gd 
-    ○ friendly-snippets  LuaSnip 
-    ○ fzf-lua  ,,  <leader>fb  <leader><leader>  <leader>fp  <leader>fr  ,r  <leader>ff  <leader>fn  <leader>fg  <leader>f/  <leader>fh  <leader>fd  <leader>fw  <C-P>  <leader>f. 
-    ○ lspkind.nvim  nvim-cmp 
-    ○ LuaSnip  nvim-cmp 
-    ○ mini.icons  fzf-lua 
-    ○ no-neck-pain.nvim  <leader>nn  <leader>nu  <leader>nd 
-    ○ nvim-cmp  InsertEnter 
-    ○ plenary.nvim  diffview.nvim 
-    ○ trouble.nvim  <leader>xb  <leader>xs  <leader>xl  <leader>xq  <leader>xx 
+  Not Loaded (6)
+    ○ diffview.nvim  <leader>gd  <leader>gc  <leader>gh
+    ○ fzf-lua  <leader>ff  <leader>fn  <leader>fg  <leader>f/  <leader>fh  <leader>fd  <leader>fw  <leader>fr  <leader><leader>  <leader>fp  ,r  <leader>fb  <C-P>  ,,  <leader>f.
+    ○ mini.icons  fzf-lua
+    ○ no-neck-pain.nvim  <leader>nd  <leader>nn  <leader>nu
+    ○ plenary.nvim  diffview.nvim
+    ○ trouble.nvim  <leader>xb  <leader>xs  <leader>xl  <leader>xq  <leader>xx
+
 ```
 
 ## Customization
