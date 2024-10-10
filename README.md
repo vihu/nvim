@@ -61,19 +61,6 @@ Run `:checkhealth` in Neovim and ensure the following are working correctly:
 
 ## Plugin List
 
-This configuration includes 18 plugins (excluding dependencies).
-Including the usual ones:
-
-- nvim-lspconfig: Language Server Protocol support
-- nvim-treesitter: Syntax highlighting and code parsing
-- blink: Autocompletion
-- mason: LSP package manager
-- fzf-lua: Fuzzy finder
-- conform: Code formatter
-- catppuccin: Color scheme
-
-Here's a full list using `Lazy show`
-
 ```bash
   Total: 32 plugins
 
