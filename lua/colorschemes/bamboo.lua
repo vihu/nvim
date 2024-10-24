@@ -1,11 +1,10 @@
 return {
   'ribru17/bamboo.nvim',
   lazy = false,
-  enabled = false,
+  enabled = true,
   priority = 1000,
   config = function()
     require('bamboo').setup {
-      style = 'light',
       transparent = true,
       dim_inactive = true,
       lualine = {
@@ -20,9 +19,6 @@ return {
         parameters = { italic = false },
         strings = { italic = false },
         variables = { italic = false },
-      },
-      highlights = {
-        ['@comment'] = { fg = '$grey' },
       },
     }
     require('bamboo').load()
