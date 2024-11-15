@@ -7,9 +7,6 @@ return {
     require('bamboo').setup {
       transparent = true,
       dim_inactive = true,
-      lualine = {
-        transparent = true,
-      },
       code_style = {
         comments = { italic = false },
         conditionals = { italic = false },

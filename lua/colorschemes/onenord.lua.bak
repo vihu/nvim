@@ -1,0 +1,30 @@
+return {
+  'rmehri01/onenord.nvim',
+  lazy = false,
+  enabled = true,
+  priority = 1000,
+  config = function()
+    require('onenord').setup {
+      borders = true,
+      fade_nc = true,
+      styles = {
+        comments = 'NONE',
+        strings = 'NONE',
+        keywords = 'NONE',
+        functions = 'NONE',
+        variables = 'NONE',
+        diagnostics = 'underline',
+      },
+      disable = {
+        background = true,
+        float_background = true,
+        cursorline = false,
+        eob_lines = true,
+      },
+      inverse = {
+        match_paren = false,
+      },
+    }
+    vim.api.nvim_command 'colorscheme onenord'
+  end,
+}

@@ -1,13 +1,12 @@
 return {
   'rose-pine/neovim',
   lazy = false,
-  enabled = false,
-  cond = false,
+  enabled = true,
   priority = 1000,
   name = 'rose-pine',
   config = function()
     require('rose-pine').setup {
-      variant = 'auto', -- auto, main, moon, or dawn
+      variant = 'auto',
       dark_variant = 'main',
       dim_inactive_windows = true,
       extend_background_behind_borders = true,
@@ -24,7 +23,6 @@ return {
         transparency = true,
       },
     }
-    vim.o.background = 'dark'
     vim.api.nvim_command 'colorscheme rose-pine'
   end,
 }
