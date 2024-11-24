@@ -5,6 +5,7 @@ return {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'saghen/blink.cmp',
 
     -- Useful status updates for LSP.
     { 'j-hui/fidget.nvim', opts = { notification = { window = { winblend = 0 } } } },
@@ -117,9 +118,6 @@ return {
       end,
     })
 
-    --  Create new capabilities with nvim cmp, and then broadcast that to the servers.
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-
     local servers = {
       svelte = {},
       ts_ls = {},
@@ -179,6 +177,10 @@ return {
       'ts_ls',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+    --  Additional capabilities using blink
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
 
     require('mason-lspconfig').setup {
       handlers = {
