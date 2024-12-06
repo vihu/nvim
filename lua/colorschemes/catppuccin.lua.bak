@@ -37,7 +37,7 @@ return {
       },
       integrations = {
         barbar = true,
-        cmp = true,
+        blink_cmp = true,
         diffview = true,
         fidget = true,
         flash = true,

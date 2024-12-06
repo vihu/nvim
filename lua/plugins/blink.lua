@@ -14,6 +14,13 @@ return {
         enabled_providers = { 'lsp', 'path', 'snippets', 'buffer' },
       },
     },
+    completion = {
+      menu = {
+        draw = {
+          columns = { { 'label', 'label_description', gap = 1 }, { 'kind_icon', 'kind' } },
+        },
+      },
+    },
   },
   opts_extend = { 'sources.completion.enabled_providers' },
 }
