@@ -4,9 +4,10 @@ return {
   enabled = true,
   priority = 1000,
   config = function()
-    local variant = 'light'
+    local variant = 'default'
 
     require('cyberdream').setup {
+      cache = false,
       transparent = true,
       italic_comments = false,
       hide_fillchars = false,
