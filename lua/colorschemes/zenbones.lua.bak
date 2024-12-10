@@ -1,0 +1,16 @@
+return {
+  'zenbones-theme/zenbones.nvim',
+  dependencies = 'rktjmp/lush.nvim',
+  enabled = true,
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.g.zenbones_transparent_background = true
+    vim.g.zenbones_lightness = 'bright'
+    vim.g.zenbones_darkness = 'stark'
+    vim.g.zenbones_darken_noncurrent_window = true
+    vim.g.zenbones_lighten_noncurrent_window = true
+    vim.g.zenbones_solid_float_border = true
+    vim.cmd.colorscheme 'zenbones'
+  end,
+}

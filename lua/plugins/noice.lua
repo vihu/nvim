@@ -3,7 +3,6 @@ return {
   event = 'VeryLazy',
   dependencies = {
     'MunifTanjim/nui.nvim',
-    'rcarriga/nvim-notify',
   },
   opts = {
     lsp = {
@@ -35,6 +34,9 @@ return {
       long_message_to_split = true,
       inc_rename = true,
       lsp_doc_border = true,
+    },
+    notify = {
+      enabled = false,
     },
   },
 }
