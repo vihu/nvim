@@ -116,7 +116,6 @@ If you encounter any issues:
 
 ## Screenshots
 
-Day:
 ![Day Mode 1](screenshots/day1.png)
 ![Day Mode 2](screenshots/day2.png)
 ![Night Mode 1](screenshots/night1.png)
