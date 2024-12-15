@@ -1,7 +1,16 @@
 return {
   'folke/flash.nvim',
   event = 'VeryLazy',
-  opts = {},
+  opts = {
+    action = function(match, state)
+      local jump = require 'flash.jump'
+      local cinnamon = require 'cinnamon'
+      cinnamon.scroll(function()
+        jump.jump(match, state)
+        jump.on_jump(state)
+      end)
+    end,
+  },
   keys = {
     {
       's',
