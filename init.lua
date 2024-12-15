@@ -13,6 +13,6 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require('lazy').setup {
-  { import = 'plugins' },
   { import = 'colorschemes' },
+  { import = 'plugins' },
 }
