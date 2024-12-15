@@ -113,3 +113,11 @@ If you encounter any issues:
 
 1. Ensure all prerequisites are installed
 2. Run `:checkhealth` and address any errors
+
+## Screenshots
+
+Day:
+![Day Mode 1](screenshots/day1.png)
+![Day Mode 2](screenshots/day2.png)
+![Night Mode 1](screenshots/night1.png)
+![Night Mode 2](screenshots/night2.png)
