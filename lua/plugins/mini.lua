@@ -4,16 +4,7 @@ return {
     local set = vim.keymap.set
 
     -- Icons
-    require('mini.icons').setup {}
-
-    -- Edit files
-    require('mini.files').setup {}
-    set('n', '-', ':lua MiniFiles.open()<CR>', { desc = '[-] Show files' })
-    set('n', ',e', function()
-      if not MiniFiles.close() then
-        MiniFiles.open()
-      end
-    end, { desc = 'Toggle Explorer' })
+    -- require('mini.icons').setup {}
 
     -- Git support (primarily for mini.statusline)
     require('mini.git').setup {}
