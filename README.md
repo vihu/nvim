@@ -62,45 +62,44 @@ Run `:checkhealth` in Neovim and ensure the following are working correctly:
 ## Plugin List
 
 ```bash
-  Total: 34 plugins
+  Total: 33 plugins
 
-  Loaded (28)
-    ● blink.cmp 4.45ms  nvim-lspconfig
-    ● conform.nvim 0.59ms  start
-    ● corn.nvim 0.78ms  nvim-lspconfig
-    ● fidget.nvim 3.62ms  nvim-lspconfig
-    ● flash.nvim 1.09ms  VeryLazy
-    ● friendly-snippets 0.18ms  blink.cmp
-    ● fzf-lua 4.46ms  <C-P>
-    ● lazy.nvim 5.44ms  init.lua
-    ● lsp-inlayhints.nvim 0.73ms  nvim-lspconfig
-    ● mason-lspconfig.nvim 0.12ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 1.73ms  nvim-lspconfig
-    ● mason.nvim 0.09ms  nvim-lspconfig
-    ● mini.icons 0.25ms  fzf-lua
-    ● mini.nvim 2.76ms  start
-    ● neodev.nvim 0.69ms  nvim-lspconfig
-    ● nightfox.nvim 18.19ms  start
-    ● noice.nvim 1.28ms  VeryLazy
-    ● nui.nvim 0.26ms  noice.nvim
-    ● nvim-colorizer.lua 1.86ms  VeryLazy
-    ● nvim-lspconfig 18.03ms  start
-    ● nvim-treesitter 5.84ms  start
-    ● nvim-treesitter-textobjects 3.66ms  nvim-treesitter
-    ● peek.nvim 0.7ms  VeryLazy
-    ● quicker.nvim 0.33ms  start
-    ● vim-just 0.04ms  BufReadPre
-    ● vim-sleuth 0.3ms  start
-    ● vim-tmux-navigator 0.16ms  start
-    ● which-key.nvim 0.96ms  VeryLazy
+  Loaded (25)
+    ● blink.cmp 5.05ms  nvim-lspconfig
+    ● conform.nvim 0.28ms  start
+    ● corn.nvim 0.6ms  nvim-lspconfig
+    ● fidget.nvim 3.67ms  nvim-lspconfig
+    ● friendly-snippets 0.19ms  blink.cmp
+    ● lazy.nvim 7.33ms  init.lua
+    ● lsp-inlayhints.nvim 0.62ms  nvim-lspconfig
+    ● mason-lspconfig.nvim 0.15ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 2.07ms  nvim-lspconfig
+    ● mason.nvim 0.12ms  nvim-lspconfig
+    ● mini.nvim 2.91ms  start
+    ● neodev.nvim 0.77ms  nvim-lspconfig
+    ● nightfox.nvim 2.69ms  start
+    ● noice.nvim 0.76ms  VeryLazy
+    ● nui.nvim 0.16ms  noice.nvim
+    ● nvim-colorizer.lua 1.17ms  VeryLazy
+    ● nvim-lspconfig 19.41ms  start
+    ● nvim-treesitter 5.28ms  start
+    ● nvim-treesitter-textobjects 3.38ms  nvim-treesitter
+    ● nvim-web-devicons 0.09ms 󰢱 nvim-web-devicons  mini.nvim
+    ● peek.nvim 0.4ms  VeryLazy
+    ● quicker.nvim 0.32ms  start
+    ● vim-sleuth 0.37ms  start
+    ● vim-tmux-navigator 0.29ms  start
+    ● which-key.nvim 0.4ms  VeryLazy
 
-  Not Loaded (6)
-    ○ cinnamon.nvim  zt  zz  <c-d>  <c-u>  G  <c-f>  gg  zb  <c-b>
-    ○ diffview.nvim  <leader>gh  <leader>gd  <leader>gc
-    ○ no-neck-pain.nvim  <leader>nu  <leader>nd  <leader>nn
-    ○ plenary.nvim  diffview.nvim
+  Not Loaded (8)
+    ○ cinnamon.nvim  gg  zb  zt  zz  G  <c-d>  <c-b>  <c-u>  <c-f>
+    ○ diffview.nvim  <leader>gd  <leader>gc  <leader>gh
+    ○ fzf-lua  <leader>fg  <leader>f/  ,,  <leader>fd  <leader>fw  <leader>fr  <leader><leader>  <leader>fp  <leader>fb  <leader>f.  ,r  <leader>fn  <leader>fh  <leader>ff  <C-P>
+    ○ neo-tree.nvim  ,e
+    ○ plenary.nvim  diffview.nvim  neo-tree.nvim
     ○ snacks.nvim  <leader>gB  <leader>un  <leader>gb
-    ○ trouble.nvim  <leader>xx  <leader>xb  <leader>xs  <leader>xl  <leader>xq
+    ○ trouble.nvim  <leader>xl  <leader>xq  <leader>xx  <leader>xb  <leader>xs
+    ○ vim-just  \cjustfile  *.just  .justfile  BufNewFile  BufReadPre
 ```
 
 ## Customization
