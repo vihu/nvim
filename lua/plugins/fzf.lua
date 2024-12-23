@@ -101,7 +101,7 @@ return {
       desc = '[F]ind [N]eovim [F]iles',
       silent = true,
     },
-    -- Use sg for live grep
+    -- Use fg for live grep
     {
       '<leader>fg',
       ":lua require('fzf-lua').live_grep({ multiprocess = true })<CR>",
@@ -115,7 +115,7 @@ return {
       desc = 'live grep with ,,',
       silent = true,
     },
-    -- Use s/ for live grep in current buffer
+    -- Use f/ for live grep in current buffer
     {
       '<leader>f/',
       ":lua require('fzf-lua').lgrep_curbuf({ multiprocess = true })<CR>",
@@ -136,7 +136,7 @@ return {
       desc = 'switch between buffers',
       silent = true,
     },
-    -- Use <leader>sd for workspace diagnostics
+    -- Use <leader>fd for workspace diagnostics
     {
       '<leader>fd',
       ":lua require('fzf-lua').diagnostics_workspace()<CR>",
