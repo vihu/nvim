@@ -16,7 +16,7 @@ return {
       { '<leader>b', group = '[B]uffer' },
       { '<leader>c', group = '[C]ode' },
       { '<leader>w', group = '[W]orkspace' },
-      { '<leader>n', group = '[N]eckpain' },
+      { '<leader>n', group = '[N]otifications' },
     },
   },
 }

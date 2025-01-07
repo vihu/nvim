@@ -21,11 +21,11 @@ return {
       desc = '[G]it [B]rowse',
     },
     {
-      '<leader>un',
+      '<leader>nh',
       function()
         Snacks.notifier.hide()
       end,
-      desc = 'Dismiss All Notifications',
+      desc = '[H]ide',
     },
     {
       '<leader>gb',
