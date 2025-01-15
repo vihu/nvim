@@ -17,6 +17,7 @@ return {
       { '<leader>c', group = '[C]ode' },
       { '<leader>w', group = '[W]orkspace' },
       { '<leader>n', group = '[N]otifications' },
+      { '<leader>z', group = '[Z]k' },
     },
   },
 }
