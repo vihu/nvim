@@ -1,38 +1,23 @@
 return {
   'folke/snacks.nvim',
-  opts = {
-    notifier = { enabled = true, timeout = 3000 },
-    git = { enabled = true },
-    gitbrowse = { enabled = true },
-    quickfile = { enabled = true },
-    bigfile = { enabled = true },
-    styles = {
-      notification = {
-        wo = { wrap = true },
-      },
-    },
-  },
-  keys = {
-    {
-      '<leader>gB',
-      function()
-        Snacks.gitbrowse()
-      end,
-      desc = '[G]it [B]rowse',
-    },
-    {
-      '<leader>nh',
-      function()
-        Snacks.notifier.hide()
-      end,
-      desc = '[H]ide',
-    },
-    {
-      '<leader>gb',
-      function()
-        Snacks.git.blame_line()
-      end,
-      desc = '[G]it [B]lame',
-    },
-  },
+  config = function()
+    require('snacks').setup {
+      scroll = { enabled = true },
+      notifier = { enabled = true, timeout = 3000 },
+      git = { enabled = true },
+      gitbrowse = { enabled = true },
+      quickfile = { enabled = true },
+      bigfile = { enabled = true },
+    }
+
+    vim.keymap.set('n', '<leader>gb', function()
+      Snacks.git.blame_line()
+    end, { noremap = true, silent = false, desc = '[G]it [B]lame' })
+    vim.keymap.set('n', '<leader>gB', function()
+      Snacks.gitbrowse()
+    end, { noremap = true, silent = false, desc = '[G]it [B]rowse' })
+    vim.keymap.set('n', '<leader>nh', function()
+      Snacks.notifier.hide()
+    end, { noremap = true, silent = false, desc = '[N]otification [H]ide' })
+  end,
 }
