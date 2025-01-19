@@ -24,6 +24,9 @@ local function create_floating_window(opts)
     buf = vim.api.nvim_create_buf(false, true) -- No file, scratch buffer
   end
 
+  -- Disable mini.indentscope plugin
+  vim.api.nvim_buf_set_var(buf, 'miniindentscope_disable', true)
+
   -- Define window configuration
   local win_config = {
     relative = 'editor',
@@ -37,6 +40,9 @@ local function create_floating_window(opts)
 
   -- Create the floating window
   local win = vim.api.nvim_open_win(buf, true, win_config)
+
+  -- Start in insert mode
+  vim.cmd.startinsert()
 
   return { buf = buf, win = win }
 end
