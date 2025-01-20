@@ -7,9 +7,6 @@ return {
     completion = {
       menu = {
         border = 'single',
-        auto_show = function(ctx)
-          return ctx.mode ~= 'cmdline'
-        end,
       },
     },
     keymap = { preset = 'default' },
