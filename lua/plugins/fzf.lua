@@ -104,14 +104,14 @@ return {
     -- Use fg for live grep
     {
       '<leader>fg',
-      ":lua require('fzf-lua').live_grep({ multiprocess = true })<CR>",
+      ":lua require('fzf-lua').live_grep({ multiprocess = true, silent = true })<CR>",
       desc = '[F]ind by [G]rep',
       silent = true,
     },
     -- Use ,, for live grep
     {
       ',,',
-      ":lua require('fzf-lua').live_grep({ multiprocess = true })<CR>",
+      ":lua require('fzf-lua').live_grep({ multiprocess = true, silent = true })<CR>",
       desc = 'live grep with ,,',
       silent = true,
     },
