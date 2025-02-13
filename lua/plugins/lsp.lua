@@ -44,12 +44,12 @@ return {
         --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-t>.
         nmap('gd', function()
-          require('fzf-lua').lsp_definitions { jump_to_single_result = true }
+          require('fzf-lua').lsp_definitions()
         end, '[G]oto [D]efinition')
 
         -- Find references for the word under your cursor.
         nmap('gr', function()
-          require('fzf-lua').lsp_references { ignore_current_line = true, jump_to_single_result = true, includeDeclaration = false }
+          require('fzf-lua').lsp_references { ignore_current_line = true, includeDeclaration = false }
         end, '[G]oto [R]eferences')
 
         -- Jump to the implementation of the word under your cursor.
