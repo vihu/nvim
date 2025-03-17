@@ -122,13 +122,20 @@ return {
       svelte = {},
       ts_ls = {},
       gopls = {},
+      ruff = {
+        init_options = {
+          settings = {
+            lineLength = 160,
+          },
+        },
+      },
       pylsp = {
         settings = {
           pylsp = {
             plugins = {
               pycodestyle = {
                 ignore = { 'W391', 'W503', 'E203' },
-                maxLineLength = 120,
+                maxLineLength = 160,
               },
             },
           },
@@ -167,14 +174,13 @@ return {
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'stylua',
-      'black',
-      'isort',
       'prettierd',
       'shfmt',
       'sql-formatter',
       'zls',
       'svelte-language-server',
       'ts_ls',
+      'ruff',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -183,6 +189,8 @@ return {
     capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
 
     require('mason-lspconfig').setup {
+      ensure_installed = {},
+      automatic_installation = {},
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}

@@ -84,13 +84,13 @@ return {
     -- Use ctrl-p for finding files
     {
       '<C-P>',
-      ":lua require('fzf-lua').files({ cmd = '" .. fd_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
+      ":lua require('fzf-lua').files({ cmd = '" .. fd_cmd .. " --type f --exclude node_modules --exclude **pycache** --exclude .git --exclude target'})<CR>",
       desc = '[F]ind [F]iles',
       silent = true,
     },
     {
       '<leader>ff',
-      ":lua require('fzf-lua').files({ cmd = '" .. fd_cmd .. " --type f --exclude node_modules --exclude **pycache**' })<CR>",
+      ":lua require('fzf-lua').files({ cmd = '" .. fd_cmd .. " --type f --exclude node_modules --exclude **pycache** --exclude .git --exclude target'})<CR>",
       desc = '[F]ind [F]iles',
       silent = true,
     },

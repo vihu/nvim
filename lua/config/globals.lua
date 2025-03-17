@@ -6,7 +6,7 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 -- Set python host prog
-vim.g.python3_host_prog = vim.fn.expand '$HOME/.config/pynvim/.venv/bin/python'
+vim.g.python3_host_prog = vim.fn.expand '$HOME/.config/nvimpy/.venv/bin/python'
 
 -- Set node host prog
-vim.g.node_host_prog = vim.fn.expand '$HOME/.local/share/mise/installs/node/latest/bin/neovim-node-host'
+vim.g.node_host_prog = vim.fn.expand '$HOME/.npm-global/bin/neovim-node-host'

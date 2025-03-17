@@ -13,8 +13,9 @@ This configuration is based on [kickstart.nvim](https://github.com/nvim-lua/kick
 - [Neovim](https://neovim.io/) (latest stable)
 - [ripgrep](https://github.com/BurntSushi/ripgrep) for fast searching
 - [fzf](https://github.com/junegunn/fzf) for fuzzy file finding
-- [mise](https://github.com/jdx/mise) for language version management
-- [pyenv](https://github.com/pyenv/pyenv) for python management
+- [fnm](https://github.com/Schniz/fnm) for language version management
+- [uv](https://github.com/astral-sh/uv) for python management
+- [direnv](https://www.nerdfonts.com/font-downloads) for easy venv activation
 - [Nerd Font](https://www.nerdfonts.com/font-downloads) for icons and glyphs
 
 ## Installation
@@ -26,20 +27,18 @@ This configuration is based on [kickstart.nvim](https://github.com/nvim-lua/kick
 - Node.js:
 
   ```bash
-  mise install node
-  mise use node
+  fnm install node
   npm install -g yarn neovim
   ```
 
 - Python:
 
   ```bash
-  pyenv install 3.10.6
-  mkdir -p ~/.config/pynvim && cd ~/.config/pynvim
-  pyenv local 3.10.6
-  python3 -m venv .venv
-  source .venv/bin/activate
-  pip install --upgrade pip pynvim
+  mkdir -p ~/.config/nvimpy && cd ~/.config/nvimpy
+  uv init .
+  echo 'layout uv' > .envrc
+  direnv allow
+  uv add pynvim
   ```
 
 - Deno:
@@ -62,43 +61,45 @@ Run `:checkhealth` in Neovim and ensure the following are working correctly:
 ## Plugin List
 
 ```bash
-  Total: 32 plugins
+  Total: 34 plugins
 
-  Loaded (26)
-    ● blink.cmp 6.26ms  nvim-lspconfig
-    ● conform.nvim 0.64ms  start
-    ● corn.nvim 0.58ms  nvim-lspconfig
-    ● fidget.nvim 3.35ms  nvim-lspconfig
-    ● friendly-snippets 0.1ms  blink.cmp
-    ● lazy.nvim 6.12ms  init.lua
-    ● lsp-inlayhints.nvim 0.58ms  nvim-lspconfig
-    ● mason-lspconfig.nvim 0.08ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 1.63ms  nvim-lspconfig
-    ● mason.nvim 0.12ms  nvim-lspconfig
-    ● mini.nvim 2.6ms  start
-    ● neodev.nvim 0.73ms  nvim-lspconfig
-    ● nightfox.nvim 1.95ms  start
-    ● noice.nvim 0.95ms  VeryLazy
+  Loaded (28)
+    ● blink.cmp 3.89ms  nvim-lspconfig
+    ● conform.nvim 0.26ms  start
+    ● corn.nvim 0.36ms  nvim-lspconfig
+    ● fidget.nvim 3.14ms  nvim-lspconfig
+    ● friendly-snippets 0.09ms  blink.cmp
+    ● lazy.nvim 4.27ms  init.lua
+    ● lsp-inlayhints.nvim 0.29ms  nvim-lspconfig
+    ● mason-lspconfig.nvim 0.07ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 1.23ms  nvim-lspconfig
+    ● mason.nvim 0.08ms  nvim-lspconfig
+    ● mini.nvim 2.24ms  start
+    ● neodev.nvim 0.4ms  nvim-lspconfig
+    ● nightfox.nvim 1.73ms  start
+    ● noice.nvim 1.03ms  VeryLazy
     ● nui.nvim 0.19ms  noice.nvim
-    ● nvim-colorizer.lua 1.23ms  VeryLazy
-    ● nvim-lspconfig 18.41ms  start
-    ● nvim-treesitter 4.41ms  start
-    ● nvim-treesitter-textobjects 2.62ms  nvim-treesitter
-    ● nvim-web-devicons 0.11ms 󰢱 nvim-web-devicons  mini.nvim
-    ● peek.nvim 0.57ms  VeryLazy
-    ● quicker.nvim 0.31ms  start
-    ● vim-just 0.03ms  BufReadPre
-    ● vim-sleuth 0.42ms  start
-    ● vim-tmux-navigator 0.11ms  start
-    ● which-key.nvim 0.55ms  VeryLazy
+    ● nvim-colorizer.lua 1.22ms  VeryLazy
+    ● nvim-lspconfig 13.92ms  start
+    ● nvim-treesitter 3.33ms  start
+    ● nvim-treesitter-textobjects 1.77ms  nvim-treesitter
+    ● nvim-web-devicons 0.12ms 󰢱 nvim-web-devicons  mini.nvim
+    ● peek.nvim 0.5ms  VeryLazy
+    ● quicker.nvim 0.24ms  start
+    ● snacks.nvim 0.35ms  start
+    ● vim-just 0.05ms  BufReadPre
+    ● vim-sleuth 0.36ms  start
+    ● vim-tmux-navigator 0.22ms  start
+    ● which-key.nvim 0.58ms  VeryLazy
+    ● zk-nvim 1.09ms  start
 
   Not Loaded (6)
-    ○ diffview.nvim  <leader>gd  <leader>gc  <leader>gh
-    ○ fzf-lua  <leader>fh  ,,  <leader>fw  <leader>fr  <leader>f.  <leader>fp  <leader><leader>  <leader>fb  <C-P>  ,r  <leader>fd  <leader>ff  <leader>fn  <leader>fg  <leader>f/
+    ○ diffview.nvim  <leader>gc  <leader>gh  <leader>gd
+    ○ fzf-lua  <leader>f.  <leader>fp  <leader>fb  ,,  ,r  <C-P>  <leader><leader>  <leader>ff  <leader>fn  <leader>fg  <leader>f/  <leader>fh  <leader>fd  <leader>fw  <leader>fr
     ○ neo-tree.nvim  ,e
+    ○ no-neck-pain.nvim  <leader>nn  <leader>nu  <leader>nd
     ○ plenary.nvim  diffview.nvim  neo-tree.nvim
-    ○ snacks.nvim  <leader>un  <leader>gb  <leader>gB
-    ○ trouble.nvim  <leader>xl  <leader>xq  <leader>xx  <leader>xb  <leader>xs
+    ○ trouble.nvim  <leader>xx  <leader>xb  <leader>xs  <leader>xl  <leader>xq
 ```
 
 ## Customization
