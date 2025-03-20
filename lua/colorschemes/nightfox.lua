@@ -1,5 +1,6 @@
 return {
-  'EdenEast/nightfox.nvim',
+  'vihu/nightfox.nvim',
+  branch = 'rg/fixup-blink-cmp-ghost-text',
   lazy = false,
   enabled = true,
   priority = 1000,
