@@ -61,44 +61,46 @@ Run `:checkhealth` in Neovim and ensure the following are working correctly:
 ## Plugin List
 
 ```bash
-  Total: 34 plugins
+  Total: 36 plugins
 
-  Loaded (28)
-    ● blink.cmp 3.89ms  nvim-lspconfig
-    ● conform.nvim 0.26ms  start
-    ● corn.nvim 0.36ms  nvim-lspconfig
-    ● fidget.nvim 3.14ms  nvim-lspconfig
-    ● friendly-snippets 0.09ms  blink.cmp
-    ● lazy.nvim 4.27ms  init.lua
-    ● lsp-inlayhints.nvim 0.29ms  nvim-lspconfig
-    ● mason-lspconfig.nvim 0.07ms  nvim-lspconfig
-    ● mason-tool-installer.nvim 1.23ms  nvim-lspconfig
-    ● mason.nvim 0.08ms  nvim-lspconfig
-    ● mini.nvim 2.24ms  start
-    ● neodev.nvim 0.4ms  nvim-lspconfig
-    ● nightfox.nvim 1.73ms  start
-    ● noice.nvim 1.03ms  VeryLazy
-    ● nui.nvim 0.19ms  noice.nvim
-    ● nvim-colorizer.lua 1.22ms  VeryLazy
-    ● nvim-lspconfig 13.92ms  start
-    ● nvim-treesitter 3.33ms  start
-    ● nvim-treesitter-textobjects 1.77ms  nvim-treesitter
-    ● nvim-web-devicons 0.12ms 󰢱 nvim-web-devicons  mini.nvim
-    ● peek.nvim 0.5ms  VeryLazy
-    ● quicker.nvim 0.24ms  start
-    ● snacks.nvim 0.35ms  start
-    ● vim-just 0.05ms  BufReadPre
-    ● vim-sleuth 0.36ms  start
-    ● vim-tmux-navigator 0.22ms  start
-    ● which-key.nvim 0.58ms  VeryLazy
-    ● zk-nvim 1.09ms  start
+  Loaded (31)
+    ● blink.cmp 8.85ms  start
+    ● conform.nvim 0.45ms  start
+    ● corn.nvim 0.66ms  nvim-lspconfig
+    ● fidget.nvim 3.02ms  nvim-lspconfig
+    ● flash.nvim 1.09ms  VeryLazy
+    ● friendly-snippets 0.13ms  blink.cmp
+    ● lazy.nvim 39.01ms  init.lua
+    ● mason-lspconfig.nvim 0.14ms  nvim-lspconfig
+    ● mason-tool-installer.nvim 1.56ms  nvim-lspconfig
+    ● mason.nvim 0.13ms  nvim-lspconfig
+    ● mini.nvim 4.06ms  start
+    ● neo-tree.nvim 1.89ms  ,e
+    ● neodev.nvim 0.84ms  nvim-lspconfig
+    ● nightfox.nvim 1.98ms  start
+    ● noice.nvim 0.96ms  VeryLazy
+    ● nui.nvim 0.2ms  noice.nvim
+    ● nvim-colorizer.lua 1.62ms  VeryLazy
+    ● nvim-lsp-endhints 1.08ms  LspAttach
+    ● nvim-lspconfig 45.55ms  start
+    ● nvim-treesitter 5.99ms  start
+    ● nvim-treesitter-textobjects 4.06ms  nvim-treesitter
+    ● nvim-web-devicons 0.14ms 󰢱 nvim-web-devicons  mini.nvim
+    ● peek.nvim 0.66ms  VeryLazy
+    ● plenary.nvim 0.42ms  neo-tree.nvim
+    ● quicker.nvim 0.37ms  start
+    ● snacks.nvim 0.68ms  start
+    ● vim-just 0.07ms  BufReadPre
+    ● vim-sleuth 0.42ms  start
+    ● vim-tmux-navigator 0.24ms  start
+    ● which-key.nvim 0.55ms  VeryLazy
+    ● zk-nvim 1.19ms  start
 
-  Not Loaded (6)
-    ○ diffview.nvim  <leader>gc  <leader>gh  <leader>gd
-    ○ fzf-lua  <leader>f.  <leader>fp  <leader>fb  ,,  ,r  <C-P>  <leader><leader>  <leader>ff  <leader>fn  <leader>fg  <leader>f/  <leader>fh  <leader>fd  <leader>fw  <leader>fr
-    ○ neo-tree.nvim  ,e
-    ○ no-neck-pain.nvim  <leader>nn  <leader>nu  <leader>nd
-    ○ plenary.nvim  diffview.nvim  neo-tree.nvim
+  Not Loaded (5)
+    ○ crates.nvim  BufRead Cargo.toml
+    ○ diffview.nvim  <leader>gh  <leader>gd  <leader>gc
+    ○ fzf-lua  <leader>fh  <leader>fd  <leader>fw  <leader>fr  ,,  <leader>fp  <leader><leader>  <leader>fb  <leader>f.  ,r  <C-P>  <leader>ff  <leader>fn  <leader>fg  <leader>f/
+    ○ no-neck-pain.nvim  <leader>nd  <leader>nn  <leader>nu
     ○ trouble.nvim  <leader>xx  <leader>xb  <leader>xs  <leader>xl  <leader>xq
 ```
 
