@@ -14,9 +14,6 @@ return {
     -- used for completion, annotations and signatures of Neovim apis
     { 'folke/neodev.nvim', opts = {} },
 
-    -- Add support for LSP inlay hints, only till nvim --version < 0.10
-    { 'lvimuser/lsp-inlayhints.nvim', opts = {} },
-
     -- Diagnostics in the top-right corner (helix style)
     {
       'RaafatTurki/corn.nvim',
@@ -111,9 +108,6 @@ return {
             buffer = event.buf,
             callback = vim.lsp.buf.clear_references,
           })
-
-          -- Add inlay hints for the current buffer (applicable till nvim version < 0.10)
-          require('lsp-inlayhints').on_attach(client, event.buf)
         end
       end,
     })
