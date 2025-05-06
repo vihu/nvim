@@ -1,14 +1,14 @@
 return {
-  'vihu/gruvbox.nvim',
+  'ellisonleao/gruvbox.nvim',
   priority = 1000,
   lazy = false,
   enabled = true,
   config = function()
     require('gruvbox').setup {
       terminal_colors = true,
-      undercurl = false,
-      underline = false,
-      bold = false,
+      undercurl = true,
+      underline = true,
+      bold = true,
       italic = {
         strings = false,
         emphasis = false,
@@ -21,7 +21,7 @@ return {
       invert_signs = false,
       invert_tabline = false,
       invert_intend_guides = false,
-      inverse = false,
+      inverse = true,
       contrast = 'hard',
       palette_overrides = {},
       overrides = {},
@@ -29,7 +29,7 @@ return {
       transparent_mode = true,
     }
 
-    -- vim.o.background = 'dark'
+    vim.o.background = 'dark'
     vim.cmd 'colorscheme gruvbox'
   end,
 }
