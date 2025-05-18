@@ -25,6 +25,7 @@ return {
       markdown = { 'prettier' },
       lua = { 'stylua' },
       sql = { 'sql_formatter' },
+      go = { 'gofmt' },
       python = {
         -- To fix auto-fixable lint errors.
         'ruff_fix',
