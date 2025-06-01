@@ -175,7 +175,7 @@ return {
     {
       '<leader>fp',
       function()
-        project_switcher { '~/work', '~/personal' }
+        project_switcher { '~/work', '~/personal', '~/ideas', '~/.config' }
       end,
       desc = '[F]ind [P]rojects',
       silent = true,

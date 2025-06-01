@@ -1,5 +1,6 @@
 return {
   'shortcuts/no-neck-pain.nvim',
+  lazy = true,
   version = '*',
   keys = {
     { '<leader>nn', '<cmd>NoNeckPain<cr>', desc = '[N]o [N]eckpain', silent = true },

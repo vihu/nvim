@@ -8,4 +8,5 @@ return {
     }
   end,
   event = 'VeryLazy',
+  lazy = true,
 }
