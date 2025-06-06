@@ -2,7 +2,7 @@ return {
   'vihu/nightfox.nvim',
   branch = 'rg/fixup-blink-cmp-ghost-text',
   lazy = false,
-  enabled = true,
+  enabled = false,
   priority = 1000,
   config = function()
     require('nightfox').setup {
@@ -16,6 +16,6 @@ return {
       },
     }
 
-    vim.cmd 'colorscheme nightfox'
+    vim.cmd 'colorscheme dayfox'
   end,
 }

@@ -112,6 +112,32 @@ return {
       end,
     })
 
+    -- Setup Mason first
+    require('mason').setup()
+
+    -- Install tools with Mason
+    require('mason-tool-installer').setup {
+      ensure_installed = {
+        'stylua',
+        'prettier',
+        'shfmt',
+        'sql-formatter',
+        'zls',
+        'svelte-language-server',
+        'typescript-language-server',
+        'ruff',
+        'rust-analyzer',
+        'lua-language-server',
+        'gopls',
+        'pylsp',
+      },
+    }
+
+    --  Additional capabilities using blink
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+
+    -- Define server configurations
     local servers = {
       svelte = {},
       ts_ls = {},
@@ -135,72 +161,70 @@ return {
           },
         },
       },
-      rust_analyzer = {
-        settings = {
-          ['rust-analyzer'] = {
-            cargo = {
-              allFeatures = true,
-            },
-            checkOnSave = {
-              command = 'clippy',
-            },
-            inlayHints = {
-              locationLinks = false,
-            },
-            diagnostics = {
-              disabled = { 'inactive-code' },
-            },
-          },
-        },
-      },
       lua_ls = {
         settings = {
           Lua = {
             completion = {
               callSnippet = 'Replace',
             },
+            diagnostics = {
+              globals = { 'vim' },
+            },
           },
         },
       },
     }
 
-    require('mason').setup()
-
-    -- You can add other tools here that you want Mason to install
-    -- for you, so that they are available from within Neovim.
-    local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      'stylua',
-      'prettier',
-      'shfmt',
-      'sql-formatter',
-      'zls',
-      'svelte-language-server',
-      'ts_ls',
-      'ruff',
-    })
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-    --  Additional capabilities using blink
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
-
+    -- Setup mason-lspconfig but exclude rust-analyzer from automatic setup
     require('mason-lspconfig').setup {
-      ensure_installed = {},
-      automatic_installation = {},
+      ensure_installed = vim.tbl_keys(servers),
+      automatic_installation = false,
+      automatic_enable = {
+        exclude = {
+          'rust_analyzer',
+        },
+      },
       handlers = {
+        -- Default handler for servers
         function(server_name)
           local server = servers[server_name] or {}
-
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for tsserver)
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
       },
     }
 
-    require('lspconfig').gleam.setup {}
+    -- Now setup rust-analyzer with our settings
+    require('lspconfig').rust_analyzer.setup {
+      capabilities = capabilities,
+      settings = {
+        ['rust-analyzer'] = {
+          cargo = {
+            features = 'all',
+          },
+          check = {
+            features = 'all',
+          },
+          checkOnSave = {
+            command = 'clippy',
+          },
+          inlayHints = {
+            locationLinks = false,
+          },
+          diagnostics = {
+            disabled = { 'inactive-code' },
+          },
+          imports = {
+            granularity = {
+              group = 'Crate',
+              enforce = true,
+            },
+            merge = {
+              glob = true,
+            },
+          },
+        },
+      },
+    }
   end,
 }
