@@ -55,7 +55,8 @@ return {
   -- dependencies = { 'echasnovski/mini.icons' },
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
-    require('fzf-lua').setup {
+    local fzf_lua = require 'fzf-lua'
+    fzf_lua.setup {
       files = {
         formatter = 'path.filename_first',
         git_icons = true,
@@ -79,6 +80,7 @@ return {
       },
       hls = { border = 'FloatBorder' },
     }
+    fzf_lua.register_ui_select()
   end,
   keys = {
     -- Use ctrl-p for finding files

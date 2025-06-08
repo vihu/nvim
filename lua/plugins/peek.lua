@@ -7,9 +7,11 @@ return {
     require('peek').setup {
       app = 'browser',
     }
-    vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
-    vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
-    vim.api.nvim_set_keymap('n', '<leader>po', '<Cmd>PeekOpen<CR>', { desc = '[P]eek [O]pen' })
-    vim.api.nvim_set_keymap('n', '<leader>pc', '<Cmd>PeekClose<CR>', { desc = '[P]eek [C]lose' })
+
+    local api = vim.api
+    api.nvim_create_user_command('PeekOpen', require('peek').open, {})
+    api.nvim_create_user_command('PeekClose', require('peek').close, {})
+    api.nvim_set_keymap('n', '<leader>po', '<Cmd>PeekOpen<CR>', { desc = '[P]eek [O]pen' })
+    api.nvim_set_keymap('n', '<leader>pc', '<Cmd>PeekClose<CR>', { desc = '[P]eek [C]lose' })
   end,
 }

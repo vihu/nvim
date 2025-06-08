@@ -19,6 +19,8 @@ return {
       'markdown_inline',
       'just',
       'regex',
+      'typescript',
+      'go',
     },
     auto_install = true,
     highlight = {

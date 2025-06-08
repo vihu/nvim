@@ -1,71 +1,206 @@
 # Neovim Configuration
 
-This configuration is based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) and includes additional customizations.
-
-## Features
-
-- Modular plugin management (plugins separated into individual files)
-- Custom autocmds, options, globals, and keymaps
-- Extra plugins for IDE like functionality
+A modern Neovim configuration using built-in LSP support and modular plugin management.
 
 ## Prerequisites
 
-- [Neovim](https://neovim.io/) (latest stable)
-- [ripgrep](https://github.com/BurntSushi/ripgrep) for fast searching
-- [fzf](https://github.com/junegunn/fzf) for fuzzy file finding
-- [fnm](https://github.com/Schniz/fnm) for language version management
-- [uv](https://github.com/astral-sh/uv) for python management
-- [direnv](https://www.nerdfonts.com/font-downloads) for easy venv activation
-- [Nerd Font](https://www.nerdfonts.com/font-downloads) for icons and glyphs
+| Requirement                                      | Description                        | Recommended |
+| ------------------------------------------------ | ---------------------------------- | ----------- |
+| [Neovim](https://neovim.io/)                     | Show comprehensive LSP information | v0.11+      |
+| [ripgrep](https://github.com/BurntSushi/ripgrep) | for fast searching                 |             |
+| [fd](https://github.com/sharkdp/fd)              | for file finding                   |             |
+| [fzf](https://github.com/junegunn/fzf)           | fuzzy finder backend               |             |
+| [Nerd Font](https://www.nerdfonts.com/)          | for icons and symbols              | JuliaMono   |
 
-## Installation
+### Language Servers
 
-1. Clone this repository to your Neovim configuration directory:
+Install the following language servers manually:
 
-2. Install the required dependencies:
+```bash
+# Lua
+brew install lua-language-server  # macOS
+yay -S lua-language-server  # arch
 
-- Node.js:
+# Go
+go install golang.org/x/tools/gopls@latest
+
+# Rust
+rustup component add rust-analyzer
+
+# TypeScript/JavaScript
+npm install -g typescript typescript-language-server
+
+# Python
+pip install basedpyright ruff
+```
+
+### Formatters
+
+Install formatters for automatic code formatting:
+
+```bash
+# General formatters
+npm install -g prettier
+go install mvdan.cc/sh/v3/cmd/shfmt@latest
+brew install deno  # or https://deno.land/
+
+# Language-specific
+pip install ruff  # Python formatting and linting
+cargo install stylua  # Lua formatter
+npm install -g sql-formatter
+
+# Protocol buffers (optional)
+go install github.com/bufbuild/buf/cmd/buf@latest
+```
+
+### Development Dependencies
+
+- **Node.js** (via [fnm](https://github.com/Schniz/fnm)):
 
   ```bash
   fnm install node
-  npm install -g yarn neovim
+  npm install -g neovim
   ```
 
-- Python:
+- **Python** (via [uv](https://github.com/astral-sh/uv)):
 
   ```bash
   mkdir -p ~/.config/nvimpy && cd ~/.config/nvimpy
-  uv init .
+  uv init
   echo 'layout uv' > .envrc
   direnv allow
   uv add pynvim
   ```
 
-- Deno:
+- **Deno** (for markdown preview):
   ```bash
+  # Using mise
   mise install deno
   mise use deno
   ```
 
-3. Launch Neovim and let it install the plugins automatically.
+## Installation
 
-## Health Check
+1. **Backup existing configuration**:
 
-Run `:checkhealth` in Neovim and ensure the following are working correctly:
+   ```bash
+   mv ~/.config/nvim ~/.config/nvim.bak
+   ```
 
-- clipboard
-- git
-- python support
-- nodejs support
+2. **Clone this repository**:
 
-## Customization
+   ```bash
+   git clone https://github.com/vihu/nvim ~/.config/nvim
+   ```
 
-- Add or modify plugins in `lua/plugins/`
-- Adjust config in `lua/config/*.lua`
+3. **Launch Neovim**:
+   ```bash
+   nvim
+   ```
+   Lazy.nvim will automatically install all plugins on first launch.
+
+## Project Structure
+
+```
+nvim/
+├── init.lua                # Entry point - loads core modules
+├── lua/
+│   ├── config/             # Core configuration
+│   │   ├── autocmds.lua    # Auto commands and LSP attach logic
+│   │   ├── globals.lua     # Global variables
+│   │   ├── icons.lua       # Icon definitions
+│   │   ├── keymaps.lua     # Key mappings
+│   │   ├── options.lua     # Vim options
+│   │   └── utils.lua       # Utility functions
+│   ├── core/
+│   │   ├── lazy.lua        # Plugin manager setup
+│   │   └── lsp.lua         # Built-in LSP configuration
+│   └── plugins/            # Plugin configurations
+│       ├── blink.lua       # Completion engine
+│       ├── conform.lua     # Code formatting
+│       ├── fzf.lua         # Fuzzy finder
+│       ├── treesitter.lua  # Syntax highlighting
+│       └── ...             # Other plugins
+└── lsp/                    # LSP server configurations
+    ├── basedpyright.lua    # Python LSP
+    ├── gopls.lua           # Go LSP
+    ├── lua-ls.lua          # Lua LSP
+    ├── ruff.lua            # Python linter/formatter
+    ├── rust-analyzer.lua   # Rust LSP
+    └── ts-ls.lua           # TypeScript/JavaScript LSP
+```
+
+## Key Mappings
+
+### Leader Key: `Space`
+
+| Mapping            | Description              |
+| ------------------ | ------------------------ |
+| `<C-p>`            | Find files               |
+| `,,`               | Live grep                |
+| `<leader><leader>` | Switch buffers           |
+| `<leader>ff`       | Find files               |
+| `<leader>fg`       | Find by grep             |
+| `<leader>fn`       | Find Neovim config files |
+| `<leader>fh`       | Find help                |
+| `<leader>fd`       | Find diagnostics         |
+
+### LSP Mappings
+
+| Mapping      | Description           |
+| ------------ | --------------------- |
+| `gd`         | Go to definition      |
+| `gr`         | Go to references      |
+| `gI`         | Go to implementation  |
+| `K`          | Hover documentation   |
+| `gl`         | Open diagnostic float |
+| `<leader>ca` | Code actions          |
+| `<leader>cn` | Rename symbol         |
+| `<leader>lf` | Format buffer         |
+
+### Git Mappings
+
+| Mapping      | Description           |
+| ------------ | --------------------- |
+| `<leader>gd` | Git diff              |
+| `<leader>gb` | Git blame line        |
+| `<leader>gB` | Browse file in GitHub |
+| `<leader>gh` | Git file history      |
+
+## Commands
+
+| Command            | Description                        |
+| ------------------ | ---------------------------------- |
+| `:LspInfo`         | Show comprehensive LSP information |
+| `:LspStatus`       | Show attached LSP clients          |
+| `:LspRestart`      | Restart LSP clients                |
+| `:LspCapabilities` | Show LSP server capabilities       |
+| `:LspDiagnostics`  | Show diagnostics count             |
+| `:checkhealth`     | Check Neovim health                |
 
 ## Troubleshooting
 
-If you encounter any issues:
+1. **No LSP features working**:
 
-1. Ensure all prerequisites are installed
-2. Run `:checkhealth` and address any errors
+   - Ensure language servers are installed and in PATH
+   - Run `:LspInfo` to check if servers are attached
+   - Check `:LspLog` for error messages
+
+2. **Formatting not working**:
+
+   - Install required formatters (see Prerequisites)
+   - Check formatter configuration in `conform.lua`
+
+3. **Missing icons**:
+
+   - Install a Nerd Font and configure your terminal to use it
+
+4. **Performance issues**:
+   - Disable unused plugins in `lua/plugins/`
+   - Check `:checkhealth` for potential issues
+
+## Notes
+
+- This configuration uses Neovim's built-in LSP (`vim.lsp.enable()`) instead of nvim-lspconfig
+- Language servers must be installed manually (no auto-installation)
+- Python host and Node.js host paths are configured in `globals.lua`

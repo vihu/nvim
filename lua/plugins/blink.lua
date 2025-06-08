@@ -21,7 +21,7 @@ return {
       nerd_font_variant = 'mono',
     },
     sources = {
-      default = { 'lsp', 'buffer', 'snippets' },
+      default = { 'lsp', 'buffer', 'snippets', 'path' },
       providers = {
         buffer = {
           opts = {
