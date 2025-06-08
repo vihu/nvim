@@ -1,6 +1,6 @@
 local api = vim.api
 
--- don't auto comment new line
+-- Don't auto comment new line
 api.nvim_create_autocmd('BufEnter', { command = [[set formatoptions-=cro]] })
 
 -- On LspAttach
@@ -118,7 +118,7 @@ api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- wrap words "softly" (no carriage return) in mail buffer
+-- Wrap words "softly" (no carriage return) in mail buffer
 api.nvim_create_autocmd('Filetype', {
   pattern = 'mail',
   callback = function()
@@ -138,8 +138,7 @@ api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- go to last loc when opening a buffer
--- this mean that when you open a file, you will be at the last position
+-- Go to last loc when opening a buffer
 api.nvim_create_autocmd('BufReadPost', {
   callback = function()
     local mark = api.nvim_buf_get_mark(0, '"')
@@ -150,7 +149,7 @@ api.nvim_create_autocmd('BufReadPost', {
   end,
 })
 
--- show cursor line only in active window
+-- Show cursor line only in active window
 local cursorGrp = api.nvim_create_augroup('CursorLine', { clear = true })
 api.nvim_create_autocmd({ 'InsertLeave', 'WinEnter' }, {
   pattern = '*',
@@ -159,10 +158,10 @@ api.nvim_create_autocmd({ 'InsertLeave', 'WinEnter' }, {
 })
 api.nvim_create_autocmd({ 'InsertEnter', 'WinLeave' }, { pattern = '*', command = 'set nocursorline', group = cursorGrp })
 
--- resize neovim split when terminal is resized
+-- Resize neovim split when terminal is resized
 api.nvim_command 'autocmd VimResized * wincmd ='
 
--- fix terraform and hcl comment string
+-- Fix terraform and hcl comment string
 api.nvim_create_autocmd('FileType', {
   group = api.nvim_create_augroup('FixTerraformCommentString', { clear = true }),
   callback = function(ev)
@@ -171,6 +170,7 @@ api.nvim_create_autocmd('FileType', {
   pattern = { 'terraform', 'hcl' },
 })
 
+-- Start treesitter explicitly
 api.nvim_create_autocmd('FileType', {
   callback = function()
     pcall(vim.treesitter.start)

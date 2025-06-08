@@ -1,7 +1,7 @@
-require 'core.lsp'
 require 'config.options'
 require 'config.keymaps'
 require 'config.utils'
 require 'config.autocmds'
 require 'config.globals'
 require 'core.lazy'
+require 'core.lsp'

@@ -6,6 +6,9 @@ return {
     -- Git support (primarily for mini.statusline)
     require('mini.git').setup {}
 
+    -- Icons
+    require('mini.icons').setup {}
+
     -- Tabline
     require('mini.tabline').setup {}
 

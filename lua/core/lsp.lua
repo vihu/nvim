@@ -3,9 +3,9 @@ local lsp = vim.lsp
 local diag = vim.diagnostic
 
 lsp.enable {
-  'basedpyright',
   'gopls',
   'lua-ls',
+  'pylsp',
   'ruff',
   'rust-analyzer',
   'ts-ls',
@@ -285,58 +285,3 @@ end
 
 -- Create command
 api.nvim_create_user_command('LspInfo', lsp_info, { desc = 'Show comprehensive LSP information' })
-
-local function lsp_status_short()
-  local bufnr = api.nvim_get_current_buf()
-  local clients = lsp.get_clients and lsp.get_clients { bufnr = bufnr } or lsp.get_active_clients { bufnr = bufnr }
-
-  if #clients == 0 then
-    return '' -- Return empty string when no LSP
-  end
-
-  local names = {}
-  for _, client in ipairs(clients) do
-    table.insert(names, client.name)
-  end
-
-  return '󰒋 ' .. table.concat(names, ',')
-end
-
-local function git_branch()
-  local ok, handle = pcall(io.popen, 'git branch --show-current 2>/dev/null')
-  if not ok or not handle then
-    return ''
-  end
-  local branch = handle:read '*a'
-  handle:close()
-  if branch and branch ~= '' then
-    branch = branch:gsub('\n', '')
-    return '󰊢 ' .. branch
-  end
-  return ''
-end
--- Safe wrapper functions for statusline
-local function safe_git_branch()
-  local ok, result = pcall(git_branch)
-  return ok and result or ''
-end
-
-local function safe_lsp_status()
-  local ok, result = pcall(lsp_status_short)
-  return ok and result or ''
-end
-
-_G.git_branch = safe_git_branch
-_G.lsp_status = safe_lsp_status
-
--- THEN set the statusline
-vim.opt.statusline = table.concat({
-  '%{v:lua.git_branch()}', -- Git branch
-  '%f', -- File name
-  '%m', -- Modified flag
-  '%r', -- Readonly flag
-  '%=', -- Right align
-  '%{v:lua.lsp_status()}', -- LSP status
-  ' %l:%c', -- Line:Column
-  ' %p%%', -- Percentage through file
-}, ' ')

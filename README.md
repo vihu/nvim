@@ -99,37 +99,6 @@ go install github.com/bufbuild/buf/cmd/buf@latest
    ```
    Lazy.nvim will automatically install all plugins on first launch.
 
-## Project Structure
-
-```
-nvim/
-├── init.lua                # Entry point - loads core modules
-├── lua/
-│   ├── config/             # Core configuration
-│   │   ├── autocmds.lua    # Auto commands and LSP attach logic
-│   │   ├── globals.lua     # Global variables
-│   │   ├── icons.lua       # Icon definitions
-│   │   ├── keymaps.lua     # Key mappings
-│   │   ├── options.lua     # Vim options
-│   │   └── utils.lua       # Utility functions
-│   ├── core/
-│   │   ├── lazy.lua        # Plugin manager setup
-│   │   └── lsp.lua         # Built-in LSP configuration
-│   └── plugins/            # Plugin configurations
-│       ├── blink.lua       # Completion engine
-│       ├── conform.lua     # Code formatting
-│       ├── fzf.lua         # Fuzzy finder
-│       ├── treesitter.lua  # Syntax highlighting
-│       └── ...             # Other plugins
-└── lsp/                    # LSP server configurations
-    ├── basedpyright.lua    # Python LSP
-    ├── gopls.lua           # Go LSP
-    ├── lua-ls.lua          # Lua LSP
-    ├── ruff.lua            # Python linter/formatter
-    ├── rust-analyzer.lua   # Rust LSP
-    └── ts-ls.lua           # TypeScript/JavaScript LSP
-```
-
 ## Key Mappings
 
 ### Leader Key: `Space`
