@@ -270,10 +270,10 @@ local function lsp_info()
       counts[severity] = counts[severity] + 1
     end
 
-    print('  󰅚 Errors: ' .. counts.ERROR)
-    print('  󰀪 Warnings: ' .. counts.WARN)
-    print('  󰋽 Info: ' .. counts.INFO)
-    print('  󰌶 Hints: ' .. counts.HINT)
+    print('   Errors: ' .. counts.ERROR)
+    print('   Warnings: ' .. counts.WARN)
+    print('   Info: ' .. counts.INFO)
+    print('   Hints: ' .. counts.HINT)
     print('  Total: ' .. #diagnostics)
   else
     print '󰄬 No diagnostics'
