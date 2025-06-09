@@ -1,16 +1,14 @@
 # Neovim Configuration
 
-My nvim config.
-
 ## Prerequisites
 
-| Requirement                                      | Description                        | Recommended |
-| ------------------------------------------------ | ---------------------------------- | ----------- |
-| [Neovim](https://neovim.io/)                     | Show comprehensive LSP information | v0.11+      |
-| [ripgrep](https://github.com/BurntSushi/ripgrep) | for fast searching                 |             |
-| [fd](https://github.com/sharkdp/fd)              | for file finding                   |             |
-| [fzf](https://github.com/junegunn/fzf)           | fuzzy finder backend               |             |
-| [Nerd Font](https://www.nerdfonts.com/)          | for icons and symbols              | JuliaMono   |
+| Requirement                                      | Description                 |
+| ------------------------------------------------ | --------------------------- |
+| [nvim](https://neovim.io/)                       | nvim (install via brew/yay) |
+| [ripgrep](https://github.com/BurntSushi/ripgrep) | for fast searching          |
+| [fd](https://github.com/sharkdp/fd)              | for file finding            |
+| [fzf](https://github.com/junegunn/fzf)           | fuzzy finder backend        |
+| [font](https://www.nerdfonts.com/font-downloads) | for icons and symbols       |
 
 ## Dependencies
 
@@ -40,7 +38,7 @@ $ git clone https://github.com/vihu/nvim ~/.config/nvim
 $ nvim
 ```
 
-### Health
+## Post Install: Health Check
 
 Run `:checkhealth` and install missing LSPs and formatters, for example:
 
