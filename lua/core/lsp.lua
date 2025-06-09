@@ -23,10 +23,10 @@ diag.config {
   },
   signs = {
     text = {
-      [diag.severity.ERROR] = '󰅚 ',
-      [diag.severity.WARN] = '󰀪 ',
-      [diag.severity.INFO] = '󰋽 ',
-      [diag.severity.HINT] = '󰌶 ',
+      [diag.severity.ERROR] = ' ',
+      [diag.severity.WARN] = ' ',
+      [diag.severity.INFO] = ' ',
+      [diag.severity.HINT] = ' ',
     },
     numhl = {
       [diag.severity.ERROR] = 'ErrorMsg',
