@@ -3,8 +3,13 @@ return {
   event = 'VeryLazy',
   dependencies = {
     'MunifTanjim/nui.nvim',
+    'rcarriga/nvim-notify',
   },
   opts = {
+    cmdline = {
+      enabled = true,
+      view = 'cmdline_popup',
+    },
     lsp = {
       progress = {
         enabled = false,
@@ -15,28 +20,12 @@ return {
         ['cmp.entry.get_documentation'] = true,
       },
     },
-    routes = {
-      {
-        filter = {
-          event = 'msg_show',
-          any = {
-            { find = '%d+L, %d+B' },
-            { find = '; after #%d+' },
-            { find = '; before #%d+' },
-          },
-        },
-        view = 'mini',
-      },
-    },
     presets = {
       bottom_search = false,
       command_palette = false,
       long_message_to_split = true,
       inc_rename = true,
       lsp_doc_border = true,
-    },
-    notify = {
-      enabled = false,
     },
   },
 }

@@ -8,6 +8,7 @@ lsp.enable {
   'pylsp',
   'ruff',
   'rust-analyzer',
+  'svelte',
   'ts-ls',
 }
 
