@@ -44,7 +44,7 @@ return {
     require('mini.trailspace').setup {
       only_in_normal_buffers = true,
     }
-    set('n', '<leader>tw', ':lua MiniTrailspace.trim()<CR>', { desc = '[T]railing [W]hitespace' })
+    set('n', '<leader>bt', ':lua MiniTrailspace.trim()<CR>', { desc = '[B]uffer [T]rim Whitespace' })
 
     -- Comment support
     require('mini.comment').setup {

@@ -8,92 +8,50 @@ api.nvim_create_autocmd('LspAttach', {
   group = api.nvim_create_augroup('lsp-attach', { clear = true }),
   callback = function(event)
     local nmap = function(keys, func, desc)
-      vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+      vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc, silent = true })
     end
 
-    -- Core LSP keymaps using fzf-lua (no leader prefix)
+    -- With fzf-lua
     nmap('gd', function()
       require('fzf-lua').lsp_definitions()
     end, '[G]oto [D]efinition')
-
     nmap('gr', function()
       require('fzf-lua').lsp_references { ignore_current_line = true, includeDeclaration = false }
     end, '[G]oto [R]eferences')
-
     nmap('gI', function()
       require('fzf-lua').lsp_implementations()
     end, '[G]oto [I]mplementation')
+    nmap('<leader>D', function()
+      require('fzf-lua').lsp_typedefs()
+    end, 'Type [D]efinition')
 
+    -- LSP helpers
     nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
     nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
     nmap('gl', vim.diagnostic.open_float, 'Open Diagnostic Float')
     nmap('gs', vim.lsp.buf.signature_help, 'Signature Documentation')
 
-    -- Type definition under <leader>D (not in a specific group)
-    nmap('<leader>D', function()
-      require('fzf-lua').lsp_typedefs()
-    end, 'Type [D]efinition')
-
-    -- Under <leader>f (Find) - document symbols
-    nmap('<leader>fs', function()
-      require('fzf-lua').lsp_document_symbols()
-    end, '[F]ind document [S]ymbols')
-
-    -- Under <leader>w (Workspace) - workspace symbols
+    -- LSP: Workspace specific
     nmap('<leader>ws', function()
       require('fzf-lua').lsp_live_workspace_symbols()
     end, '[W]orkspace [S]ymbols')
+    nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd dir')
+    nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove dir')
+    nmap('<leader>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, '[W]orkspace [L]ist dirs')
 
-    -- Under <leader>c (Code) - code actions and rename
-    nmap('<leader>ca', function()
+    -- LSP: Code actions
+    nmap('<leader>la', function()
       require('fzf-lua').lsp_code_actions()
-    end, '[C]ode [A]ctions')
-
-    nmap('<leader>cn', vim.lsp.buf.rename, '[C]ode Re[n]ame')
-
-    -- Special keymaps
-    nmap('<leader>v', '<cmd>vsplit | lua vim.lsp.buf.definition()<cr>', 'Goto Definition in Vertical Split')
-
-    -- Register LSP-specific mappings with which-key
-    local ok, wk = pcall(require, 'which-key')
-    if ok then
-      wk.add {
-        -- LSP group mappings (using <leader>l prefix)
-        -- These are additional LSP-specific commands that don't fit in other groups
-        {
-          '<leader>la',
-          function()
-            require('fzf-lua').lsp_code_actions()
-          end,
-          desc = 'LSP Code Actions',
-          buffer = event.buf,
-        },
-        { '<leader>lr', vim.lsp.buf.rename, desc = 'LSP Rename', buffer = event.buf },
-        { '<leader>lf', vim.lsp.buf.format, desc = 'LSP Format', buffer = event.buf },
-        { '<leader>ls', vim.lsp.buf.signature_help, desc = 'LSP Signature Help', buffer = event.buf },
-        { '<leader>ld', vim.diagnostic.open_float, desc = 'LSP Diagnostics', buffer = event.buf },
-        {
-          '<leader>lc',
-          function()
-            require('config.utils').copyFilePathAndLineNumber()
-          end,
-          desc = 'Copy File Path and Line Number',
-          buffer = event.buf,
-        },
-
-        -- Workspace folder management (capital W)
-        { '<leader>Wa', vim.lsp.buf.add_workspace_folder, desc = 'Add Workspace Folder', buffer = event.buf },
-        { '<leader>Wr', vim.lsp.buf.remove_workspace_folder, desc = 'Remove Workspace Folder', buffer = event.buf },
-        {
-          '<leader>Wl',
-          function()
-            print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-          end,
-          desc = 'List Workspace Folders',
-          buffer = event.buf,
-        },
-      }
-    end
+    end, '[L]SP Code Actions')
+    nmap('<leader>lr', vim.lsp.buf.rename, '[L]SP Rename')
+    nmap('<leader>lf', vim.lsp.buf.format, '[L]SP Format')
+    nmap('<leader>ls', vim.lsp.buf.signature_help, '[L]SP Signature Help')
+    nmap('<leader>ld', vim.diagnostic.open_float, '[L]SP Diagnostics')
+    nmap('<leader>lc', function()
+      require('config.utils').copyFilePathAndLineNumber()
+    end, '[L]SP Copy path and line')
 
     -- Document highlight support
     local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -111,9 +69,9 @@ api.nvim_create_autocmd('LspAttach', {
 
     -- Inlay hints toggle - under <leader>t (Toggle)
     if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-      nmap('<leader>ti', function()
+      nmap('<leader>li', function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-      end, '[T]oggle [I]nlay Hints')
+      end, '[L]SP [I]nlay Hints')
     end
   end,
 })

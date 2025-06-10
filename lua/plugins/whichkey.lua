@@ -11,17 +11,14 @@ return {
     spec = {
       { '<leader>f', group = '[F]ind' },
       { '<leader>x', group = '[X]ecute' },
-      { '<leader>t', group = '[T]erminal' },
       { '<leader>o', group = '[O]bsidian' },
       { '<leader>g', group = '[G]it' },
       { '<leader>b', group = '[B]uffer' },
-      { '<leader>c', group = '[C]ode' },
       { '<leader>w', group = '[W]orkspace' },
-      { '<leader>n', group = '[N]otifications' },
+      { '<leader>n', group = '[N]eckpain' },
       { '<leader>z', group = '[Z]k' },
       { '<leader>p', group = '[P]review' },
       { '<leader>l', group = '[L]SP' },
-      { '<leader>W', group = '[W]orkspace' },
     },
   },
 }
