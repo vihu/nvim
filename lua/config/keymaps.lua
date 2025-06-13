@@ -47,3 +47,8 @@ set('v', 'y', 'ygv<esc>', { noremap = true, silent = true, desc = 'Stop cursor f
 
 -- Clear highlight on pressing <Esc> in normal mode
 set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Copy current file path
+set('n', '<leader>fc', function()
+  require('config.utils').copyCurrentFilePath()
+end, { desc = '[F]ile [C]opy path', silent = true })

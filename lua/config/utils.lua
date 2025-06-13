@@ -54,4 +54,25 @@ M.copyFilePathAndLineNumber = function()
   end
 end
 
+-- Copy just the full local path of the current buffer
+M.copyCurrentFilePath = function()
+  local current_file = vim.fn.expand '%:p'
+
+  -- Check if buffer has a valid file path
+  if current_file == '' or current_file == nil then
+    print 'No file path available for current buffer'
+    return
+  end
+
+  -- Copy to system clipboard
+  vim.fn.setreg('+', current_file)
+
+  -- Also copy to unnamed register for vim-internal pasting
+  vim.fn.setreg('"', current_file)
+
+  -- Provide user feedback with shortened path for readability
+  local shortened_path = vim.fn.fnamemodify(current_file, ':~')
+  print('Copied file path: ' .. shortened_path)
+end
+
 return M
