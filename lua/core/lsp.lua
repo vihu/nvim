@@ -10,6 +10,7 @@ lsp.enable {
   'rust-analyzer',
   'svelte',
   'ts-ls',
+  'ocamllsp',
 }
 
 diag.config {

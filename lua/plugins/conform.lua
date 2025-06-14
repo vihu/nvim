@@ -21,6 +21,7 @@ return {
       css = { 'prettier' },
       html = { 'prettier' },
       json = { 'prettier' },
+      ocaml = { 'ocamlformat' },
       yaml = { 'prettier' },
       markdown = { 'prettier' },
       lua = { 'stylua' },

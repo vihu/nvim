@@ -21,6 +21,7 @@ return {
       'regex',
       'typescript',
       'go',
+      'ocaml',
     },
     auto_install = true,
     highlight = {
