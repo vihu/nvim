@@ -19,6 +19,7 @@ return {
       { '<leader>z', group = '[Z]k' },
       { '<leader>p', group = '[P]review' },
       { '<leader>l', group = '[L]SP' },
+      { '<leader>d', group = '[D]ebug' },
     },
   },
 }
