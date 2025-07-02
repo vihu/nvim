@@ -6,21 +6,10 @@ return {
   version = '*',
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
-    local elixir = require 'elixir'
-    local elixirls = require 'elixir.elixirls'
-
-    elixir.setup {
-      nextls = { enable = false },
-      elixirls = {
-        enable = true,
-        settings = elixirls.settings {
-          dialyzerEnabled = false,
-          enableTestLenses = false,
-        },
-      },
-      projectionist = {
-        enable = true,
-      },
+    require('elixir').setup {
+      nextls = { enable = true },
+      elixirls = { enable = false },
+      projectionist = { enable = true },
     }
   end,
 }
