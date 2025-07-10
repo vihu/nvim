@@ -52,3 +52,13 @@ set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 set('n', '<leader>fc', function()
   require('config.utils').copyCurrentFilePath()
 end, { desc = '[F]ile [C]opy path', silent = true })
+
+-- Markdown preview with GitHub CLI
+set('n', '<leader>po', function()
+  require('config.utils').preview_markdown()
+end, { desc = '[P]review [O]pen', silent = true })
+
+-- Close markdown preview
+set('n', '<leader>pc', function()
+  require('config.utils').close_markdown_preview()
+end, { desc = '[P]review [C]lose', silent = true })

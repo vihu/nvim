@@ -75,4 +75,137 @@ M.copyCurrentFilePath = function()
   print('Copied file path: ' .. shortened_path)
 end
 
+-- Table to track preview processes by buffer
+local preview_processes = {}
+-- Table to track intentionally stopped processes
+local stopped_processes = {}
+-- Flag to ensure global cleanup is only set up once
+local cleanup_autocmd_set = false
+
+-- Set up global cleanup for markdown previews
+local function setup_global_cleanup()
+  if cleanup_autocmd_set then
+    return
+  end
+
+  vim.api.nvim_create_autocmd('VimLeavePre', {
+    callback = function()
+      -- Kill all active preview processes when exiting Neovim
+      for bufnr, job_id in pairs(preview_processes) do
+        stopped_processes[job_id] = true -- Mark as intentionally stopped
+        vim.fn.jobstop(job_id)
+      end
+      -- Clear the tables
+      preview_processes = {}
+      stopped_processes = {}
+    end,
+    desc = 'Cleanup markdown previews on exit',
+  })
+
+  cleanup_autocmd_set = true
+end
+
+-- Preview markdown file with GitHub CLI
+M.preview_markdown = function()
+  local current_file = vim.fn.expand '%:p'
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  -- Check if current buffer is a markdown file
+  if vim.bo.filetype ~= 'markdown' then
+    print 'Error: Not a markdown file'
+    return
+  end
+
+  -- Check if file exists and is saved
+  if vim.fn.filereadable(current_file) == 0 then
+    print 'Error: File does not exist or is not saved'
+    return
+  end
+
+  -- Check if gh CLI is available
+  if vim.fn.executable 'gh' == 0 then
+    print 'Error: GitHub CLI (gh) not found in PATH'
+    return
+  end
+
+  -- Kill existing preview for this buffer if it exists
+  if preview_processes[bufnr] then
+    local job_id = preview_processes[bufnr]
+    stopped_processes[job_id] = true -- Mark this job as intentionally stopped
+    vim.fn.jobstop(job_id)
+    preview_processes[bufnr] = nil
+  end
+
+  -- Execute the command asynchronously
+  local cmd = { 'gh', 'markdown-preview', current_file }
+  local filename = vim.fn.fnamemodify(current_file, ':t')
+
+  local job_id = vim.fn.jobstart(cmd, {
+    on_exit = function(job_id_inner, exit_code, _)
+      -- Clean up the process reference
+      preview_processes[bufnr] = nil
+
+      -- Only show error if it wasn't intentionally stopped and actually failed
+      if exit_code ~= 0 and not stopped_processes[job_id_inner] then
+        print 'Error: gh markdown-preview failed'
+        print 'Install with: gh extension install yusukebe/gh-markdown-preview'
+      end
+
+      -- Clean up stopped process tracking
+      stopped_processes[job_id_inner] = nil
+    end,
+    on_stderr = function(_, data, _)
+      if data and #data > 0 and data[1] ~= '' then
+        local error_msg = table.concat(data, ' ')
+        if string.match(error_msg, 'unknown command') or string.match(error_msg, 'markdown%-preview') then
+          print 'Error: gh markdown-preview extension not found'
+          print 'Install with: gh extension install yusukebe/gh-markdown-preview'
+        end
+      end
+    end,
+    detach = true,
+  })
+
+  if job_id > 0 then
+    -- Store the job ID for this buffer
+    preview_processes[bufnr] = job_id
+
+    -- Set up autocmd to kill preview when buffer is closed
+    vim.api.nvim_create_autocmd('BufDelete', {
+      buffer = bufnr,
+      callback = function()
+        if preview_processes[bufnr] then
+          local job_id_to_stop = preview_processes[bufnr]
+          stopped_processes[job_id_to_stop] = true -- Mark as intentionally stopped
+          vim.fn.jobstop(job_id_to_stop)
+          preview_processes[bufnr] = nil
+        end
+      end,
+      once = true,
+    })
+
+    -- Set up global cleanup on first use
+    setup_global_cleanup()
+
+    print('Opening markdown preview for: ' .. filename)
+  else
+    print 'Error: Failed to start markdown preview'
+  end
+end
+
+-- Function to manually close preview for current buffer
+M.close_markdown_preview = function()
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  if preview_processes[bufnr] then
+    local job_id = preview_processes[bufnr]
+    stopped_processes[job_id] = true -- Mark as intentionally stopped
+    vim.fn.jobstop(job_id)
+    preview_processes[bufnr] = nil
+    print 'Markdown preview closed'
+  else
+    print 'No active preview for this buffer'
+  end
+end
+
 return M
