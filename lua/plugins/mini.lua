@@ -9,9 +9,6 @@ return {
     -- Icons
     require('mini.icons').setup {}
 
-    -- Tabline
-    require('mini.tabline').setup {}
-
     -- Statusline
     require('mini.statusline').setup {}
 
