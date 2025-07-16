@@ -68,8 +68,8 @@ return {
         cmd = 'rg --vimgrep',
       },
       winopts = {
-        border = 'none',
-        split = 'botright new',
+        border = 'rounded',
+        backdrop = 80,
       },
       keymap = {
         fzf = {
@@ -118,7 +118,7 @@ return {
     -- Use f/ for live grep in current buffer
     {
       '<leader>f/',
-      ":lua require('fzf-lua').lgrep_curbuf({ multiprocess = true })<CR>",
+      ":lua require('fzf-lua').lgrep_curbuf({ multiprocess = true, silent = true })<CR>",
       desc = '[F]ind [/] in buffer',
       silent = true,
     },
@@ -146,7 +146,7 @@ return {
     -- Search current word
     {
       '<leader>fw',
-      ":lua require('fzf-lua').grep_cword()<CR>",
+      ":lua require('fzf-lua').grep_cword({silent  = true})<CR>",
       desc = '[F]ind current [W]ord',
       silent = true,
     },

@@ -1,70 +1,66 @@
-local opt = vim.opt
-
 -- Make line numbers default
-opt.number = true
+vim.o.number = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-opt.mouse = 'a'
+vim.o.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
-opt.showmode = false
+vim.o.showmode = false
 
 -- Sync clipboard between OS and Neovim.
-opt.clipboard = 'unnamedplus'
+vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
-opt.breakindent = true
+vim.o.breakindent = true
 
 -- Save undo history
-opt.undofile = true
+vim.o.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-opt.ignorecase = true
-opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-opt.signcolumn = 'yes'
+vim.o.signcolumn = 'yes'
 
 -- Decrease update time
-opt.updatetime = 250
+vim.o.updatetime = 250
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-opt.timeoutlen = 300
+vim.o.timeoutlen = 300
 
 -- Configure how new splits should be opened
-opt.splitright = true
-opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
-opt.list = true
-opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.o.list = true
+vim.o.listchars = 'tab:» ,trail:·,nbsp:␣'
 
 -- Preview substitutions live, as you type!
-opt.inccommand = 'split'
+vim.o.inccommand = 'split'
 
 -- Show which line your cursor is on
-opt.cursorline = true
+vim.o.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-opt.scrolloff = 10
+vim.o.scrolloff = 10
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
-opt.hlsearch = true
+vim.o.hlsearch = true
 
 -- Disable commandline
-opt.ch = 0
+vim.o.ch = 0
 
 -- Allow global statusline
-opt.ls = 3
+vim.o.ls = 3
 
 -- Set termguicolors
-opt.termguicolors = true
+vim.o.termguicolors = true
 
 -- Don't set swapfile
-opt.swapfile = false
+vim.o.swapfile = false
 
 -- Hide cmdline unless needed
-opt.cmdheight = 0
+vim.o.cmdheight = 0
