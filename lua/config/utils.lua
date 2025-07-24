@@ -208,4 +208,72 @@ M.close_markdown_preview = function()
   end
 end
 
+-- Safe buffer delete with proper handling
+M.delete_buffer = function(bufnr)
+  bufnr = bufnr or vim.api.nvim_get_current_buf()
+
+  -- Don't delete if it's the last buffer
+  local listed_buffers = vim.tbl_filter(function(buf)
+    return vim.fn.buflisted(buf) == 1
+  end, vim.api.nvim_list_bufs())
+
+  if #listed_buffers <= 1 then
+    vim.notify('Cannot delete last buffer', vim.log.levels.WARN)
+    return
+  end
+
+  -- Check if buffer is modified
+  if vim.bo[bufnr].modified then
+    local choice = vim.fn.confirm('Buffer has unsaved changes. Delete anyway?', '&Yes\n&No', 2)
+    if choice ~= 1 then
+      return
+    end
+  end
+
+  -- Find alternative buffer to switch to
+  local alt_buf = nil
+  for _, buf in ipairs(listed_buffers) do
+    if buf ~= bufnr and vim.api.nvim_buf_is_valid(buf) then
+      alt_buf = buf
+      break
+    end
+  end
+
+  -- Switch to alternative buffer before deleting
+  if alt_buf then
+    vim.api.nvim_set_current_buf(alt_buf)
+  end
+
+  -- Delete the buffer
+  pcall(vim.api.nvim_buf_delete, bufnr, { force = vim.bo[bufnr].modified })
+end
+
+-- Delete all buffers except current
+M.delete_other_buffers = function()
+  local current = vim.api.nvim_get_current_buf()
+  local deleted = 0
+
+  for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+    if bufnr ~= current and vim.fn.buflisted(bufnr) == 1 then
+      if not vim.bo[bufnr].modified then
+        pcall(vim.api.nvim_buf_delete, bufnr, {})
+        deleted = deleted + 1
+      end
+    end
+  end
+
+  vim.notify(string.format('Deleted %d buffers', deleted), vim.log.levels.INFO)
+end
+
+-- Open LSP log file
+M.open_lsp_log = function()
+  local log_path = vim.lsp.get_log_path()
+  if vim.fn.filereadable(log_path) == 1 then
+    vim.cmd('tabnew ' .. log_path)
+    vim.cmd 'normal! G' -- Go to end of file
+  else
+    vim.notify('LSP log file not found: ' .. log_path, vim.log.levels.WARN)
+  end
+end
+
 return M

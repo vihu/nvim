@@ -62,3 +62,25 @@ end, { desc = '[P]review [O]pen', silent = true })
 set('n', '<leader>pc', function()
   require('config.utils').close_markdown_preview()
 end, { desc = '[P]review [C]lose', silent = true })
+
+-- Buffer management
+set('n', '<leader>bd', function()
+  require('config.utils').delete_buffer()
+end, { desc = '[B]uffer [D]elete' })
+
+set('n', ',bd', function()
+  require('config.utils').delete_buffer()
+end, { desc = '[B]uffer [D]elete' })
+
+set('n', '<leader>bx', function()
+  require('config.utils').delete_other_buffers()
+end, { desc = '[B]uffer e[X]it others' })
+
+set('n', ',bx', function()
+  require('config.utils').delete_other_buffers()
+end, { desc = '[B]uffer e[X]it others' })
+
+-- LSP log viewer
+set('n', '<leader>ll', function()
+  require('config.utils').open_lsp_log()
+end, { desc = '[L]SP [L]og' })
